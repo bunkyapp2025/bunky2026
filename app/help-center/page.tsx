@@ -113,7 +113,13 @@ export default function HelpCenter() {
                     <Phone className="h-4 w-4 text-[#FC81A0]" />
                     <span>+1 (555) 000-0000</span>
                   </div>
-                  <Button className="w-full bg-[#FC81A0] hover:bg-[#e06d8a]">Submit a Request</Button>
+                  <div>
+                    <a href="mailto:bunky@gmail.com">
+                      <Button className="w-full bg-[#FC81A0] hover:bg-[#e06d8a]">
+                        Submit a Request
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>
