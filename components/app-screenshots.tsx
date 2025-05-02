@@ -1,0 +1,142 @@
+import Image from "next/image"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export function AppScreenshots() {
+  return (
+    <section id="app" className="bg-white py-16 md:py-24">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <div className="inline-block rounded-lg bg-[#FC81A0]/10 px-3 py-1 text-sm text-[#FC81A0]">Mobile App</div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Book On The Go!</h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Our mobile app makes it easy to discover, book, and manage your bookings from anywhere.
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto mt-12 max-w-5xl">
+          <Tabs defaultValue="discover" className="w-full">
+            <div className="flex justify-center mb-8">
+              <TabsList className="bg-[#FC81A0]/10">
+                <TabsTrigger
+                  value="discover"
+                  className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white"
+                >
+                  Discover
+                </TabsTrigger>
+                <TabsTrigger value="book" className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white">
+                  Book
+                </TabsTrigger>
+                <TabsTrigger
+                  value="experience"
+                  className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white"
+                >
+                  Experience
+                </TabsTrigger>
+              </TabsList>
+            </div>
+            <TabsContent value="discover" className="mt-0">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
+                  <Image
+                    src="/placeholder.svg?height=600&width=300"
+                    alt="Bunky App Discover Screen"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="max-w-md space-y-4 text-center md:text-left">
+                  <h3 className="text-2xl font-bold">Discover Amazing Tours</h3>
+                  <p className="text-gray-500">
+                    Browse through thousands of curated rentals and tour packages, filter by destination, price, or
+                    activities, and find your perfect adventure.
+                  </p>
+                  <ul className="space-y-2 text-gray-500">
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Personalized recommendations</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Advanced search filters</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Save favorites for later</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="book" className="mt-0">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
+                  <Image
+                    src="/placeholder.svg?height=600&width=300"
+                    alt="Bunky App Booking Screen"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="max-w-md space-y-4 text-center md:text-left">
+                  <h3 className="text-2xl font-bold">Seamless Booking Process</h3>
+                  <p className="text-gray-500">
+                    Book your entire trip in minutes with our intuitive booking process. Secure accommodations,
+                    activities, and transportation all in one place.
+                  </p>
+                  <ul className="space-y-2 text-gray-500">
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Secure payment options</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Flexible cancellation policies</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Instant confirmation</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="experience" className="mt-0">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
+                  <Image
+                    src="/placeholder.svg?height=600&width=300"
+                    alt="Bunky App Experience Screen"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="max-w-md space-y-4 text-center md:text-left">
+                  <h3 className="text-2xl font-bold">Enhance Your Experience</h3>
+                  <p className="text-gray-500">
+                    Access all your booking details, connect with local guides, and discover insider tips to make the
+                    most of your adventure.
+                  </p>
+                  <ul className="space-y-2 text-gray-500">
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Digital itinerary</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>In-app messaging with guides</span>
+                    </li>
+                    <li className="flex items-center gap-2 justify-center md:justify-start">
+                      <span className="h-2 w-2 rounded-full bg-[#FC81A0]"></span>
+                      <span>Offline access to important information</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+    </section>
+  )
+}
