@@ -1,7 +1,52 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Calendar, CreditCard, Search, Heart, Globe } from "lucide-react"
 
 export function Features() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
+  const features = [
+    {
+      icon: Search,
+      title: "Discover",
+      description: "Find unique tour packages tailored to your interests",
+      content: "Browse through thousands of curated tour packages from trusted providers around the world.",
+    },
+    {
+      icon: Calendar,
+      title: "Book",
+      description: "Secure your accommodation and activities in one place",
+      content:
+        "Book your entire trip with just a few clicks - accommodations, activities, and transportation all in one place.",
+    },
+    {
+      icon: Heart,
+      title: "Experience",
+      description: "Create memories that last a lifetime",
+      content: "Enjoy seamless travel experiences with 24/7 support and insider access to unique destinations.",
+    },
+    {
+      icon: MapPin,
+      title: "Local Guides",
+      description: "Connect with knowledgeable local experts",
+      content: "Our network of local guides ensures authentic experiences and insider knowledge of each destination.",
+    },
+    {
+      icon: CreditCard,
+      title: "Secure Payments",
+      description: "Book with confidence using our secure platform",
+      content: "Our secure payment system and flexible cancellation policies give you peace of mind when booking.",
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Access tour packages from around the world",
+      content: "With partners in over 100 countries, Bunky offers tour packages for every type of traveler.",
+    },
+  ]
+
   return (
     <section id="features" className="bg-white py-16 md:py-24">
       <div className="container px-4 md:px-6">
@@ -18,79 +63,40 @@ export function Features() {
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <Search className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Discover</CardTitle>
-              <CardDescription>Find unique tour packages tailored to your interests</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                Browse through thousands of curated tour packages from trusted providers around the world.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <Calendar className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Book</CardTitle>
-              <CardDescription>Secure your accommodation and activities in one place</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                Book your entire trip with just a few clicks - accommodations, activities, and transportation all in one
-                place.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <Heart className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Experience</CardTitle>
-              <CardDescription>Create memories that last a lifetime</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                Enjoy seamless travel experiences with 24/7 support and insider access to unique destinations.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <MapPin className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Local Guides</CardTitle>
-              <CardDescription>Connect with knowledgeable local experts</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                Our network of local guides ensures authentic experiences and insider knowledge of each destination.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <CreditCard className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Secure Payments</CardTitle>
-              <CardDescription>Book with confidence using our secure platform</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                Our secure payment system and flexible cancellation policies give you peace of mind when booking.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-[#FC81A0]/10 shadow-md">
-            <CardHeader className="pb-2">
-              <Globe className="h-10 w-10 text-[#FC81A0]" />
-              <CardTitle className="text-xl">Global Reach</CardTitle>
-              <CardDescription>Access tour packages from around the world</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500">
-                With partners in over 100 countries, Bunky offers tour packages for every type of traveler.
-              </p>
-            </CardContent>
-          </Card>
+          {features.map((feature, index) => (
+            <Card
+              key={index}
+              className={`border-2 ${
+                hoveredCard === index
+                  ? "border-[#FC81A0] shadow-lg transform scale-105 bg-[#FC81A0]/5"
+                  : "border-[#FC81A0]/10 shadow-md"
+              } transition-all duration-300 cursor-pointer`}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <CardHeader className="pb-2">
+                <feature.icon
+                  className={`h-10 w-10 ${hoveredCard === index ? "text-[#FC81A0] animate-bounce" : "text-[#FC81A0]"}`}
+                  style={{ animationDuration: "2s" }}
+                />
+                <CardTitle className="text-xl">{feature.title}</CardTitle>
+                <CardDescription>{feature.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">{feature.content}</p>
+                {hoveredCard === index && (
+                  <div className="mt-4 flex justify-center">
+                    {/*<span className="inline-flex items-center text-sm font-medium text-[#FC81A0]">
+                      Learn more
+                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>*/}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

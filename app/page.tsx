@@ -12,6 +12,7 @@ import { FAQ } from "@/components/faq"
 import { ContactForm } from "@/components/contact-form"
 import { HostPartnerCTA } from "@/components/host-partner-cta"
 import { AdSection } from "@/components/ad-section"
+import { Star, MapPin, TrendingUp } from "lucide-react"
 
 export default function Home() {
   return (
@@ -19,37 +20,130 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-b from-pink-50 to-white py-20 md:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+        <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white py-20 md:py-32">
+          {/* Decorative Elements */}
+          <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#FC81A0]/10 animate-pulse"></div>
+          <div
+            className="absolute top-1/2 left-10 h-16 w-16 rounded-full bg-[#FC81A0]/20 animate-bounce"
+            style={{ animationDuration: "3s" }}
+          ></div>
+          <div
+            className="absolute bottom-20 right-1/4 h-24 w-24 rounded-full bg-[#FC81A0]/15 animate-bounce"
+            style={{ animationDuration: "4s" }}
+          ></div>
+          <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-[#FC81A0]/10"></div>
+
+          <div className="container relative px-4 md:px-6">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Discover Amazing Places with Bunky
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Unforgettable <span className="text-[#FC81A0]">Adventures</span> Await You
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl">
-                    Experience the world's most breathtaking destinations with our curated rentals & tour packages. Book your stay
-                    and adventure in one place.
+                    Experience the world's most breathtaking destinations with our curated rentals & tour packages. Book
+                    your stay and adventure in one place.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-[#FC81A0] hover:bg-[#e06d8a]">
+                  <Button
+                    size="lg"
+                    className="bg-[#FC81A0] hover:bg-[#e06d8a] shadow-lg transition-all hover:translate-y-[-2px]"
+                  >
                     Book Now
                   </Button>
-                  <Button size="lg" variant="outline" className="border-[#FC81A0] text-[#FC81A0]">
+                  <Button size="lg" variant="outline" className="border-[#FC81A0] text-[#FC81A0] hover:bg-[#FC81A0]/10">
                     Explore Packages
                   </Button>
                 </div>
+
+                {/* Stats/Trust Indicators */}
+                <div className="mt-6 grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
+                  <div className="flex flex-col items-center sm:items-start">
+                    <div className="flex items-center">
+                      <Star className="h-4 w-4 text-[#FC81A0] mr-1" fill="#FC81A0" />
+                      <span className="font-bold text-lg">4.9/5</span>
+                    </div>
+                    <p className="text-xs text-gray-500">Customer Rating</p>
+                  </div>
+                  <div className="flex flex-col items-center sm:items-start">
+                    <div className="flex items-center">
+                      <MapPin className="h-4 w-4 text-[#FC81A0] mr-1" />
+                      <span className="font-bold text-lg">100+</span>
+                    </div>
+                    <p className="text-xs text-gray-500">Destinations</p>
+                  </div>
+                  <div className="flex flex-col items-center sm:items-start">
+                    <div className="flex items-center">
+                      <TrendingUp className="h-4 w-4 text-[#FC81A0] mr-1" />
+                      <span className="font-bold text-lg">10K+</span>
+                    </div>
+                    <p className="text-xs text-gray-500">Happy Travelers</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center justify-center">
-                <div className="relative h-[350px] w-[300px] sm:h-[450px] sm:w-[400px] lg:h-[550px] lg:w-[500px]">
-                  <Image
-                    src="/placeholder.svg?height=550&width=500"
-                    alt="Bunky App Hero"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+              <div className="flex items-center justify-center mt-8 md:mt-0">
+                <div className="relative">
+                  {/* Main Image */}
+                  <div className="relative h-[350px] w-[300px] sm:h-[450px] sm:w-[400px] lg:h-[550px] lg:w-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.02]">
+                    <Image
+                      src="/placeholder.svg?height=550&width=500"
+                      alt="Bunky App Hero"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+
+                  {/* Floating Elements */}
+                  <div className="absolute -top-6 -left-6 h-20 w-36 rounded-lg bg-white p-2 shadow-lg rotate-[-6deg] animate-float">
+                    <div className="flex items-center h-full">
+                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
+                        <Image
+                          src="/placeholder.svg?height=50&width=50"
+                          alt="Beach destination"
+                          width={70}
+                          height={70}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="text-xs">
+                        <p className="font-bold">Palawan</p>
+                        <p className="text-[#FC81A0]">₱1,499</p>
+                        <div className="flex mt-1">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star key={star} className="h-2 w-2 text-[#FC81A0]" fill="#FC81A0" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="absolute -bottom-4 -right-4 h-20 w-36 rounded-lg bg-white p-2 shadow-lg rotate-[4deg] animate-float"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    <div className="flex items-center h-full">
+                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
+                        <Image
+                          src="/placeholder.svg?height=70&width=70"
+                          alt="Mountain destination"
+                          width={70}
+                          height={70}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="text-xs">
+                        <p className="font-bold">Boracay</p>
+                        <p className="text-[#FC81A0]">₱1,999</p>
+                        <div className="flex mt-1">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star key={star} className="h-2 w-2 text-[#FC81A0]" fill="#FC81A0" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

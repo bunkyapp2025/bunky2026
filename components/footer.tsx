@@ -2,8 +2,8 @@
 
 import type React from "react"
 
-import Link from "next/link"
 import { useState } from "react"
+import Link from "next/link"
 import { Facebook, Instagram, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,7 +53,7 @@ export function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wider">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-sm text-gray-500 hover:text-[#FC81A0]">
+                <Link href="#" className="text-sm text-gray-500 hover:text-[#FC81A0]">
                   About Us
                 </Link>
               </li>

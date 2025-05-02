@@ -8,6 +8,16 @@ import { Menu, X } from "lucide-react"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false) // Close mobile menu if open
+
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-16 items-center px-4 sm:px-6">
@@ -15,27 +25,21 @@ export function Header() {
           <span className="text-2xl font-bold text-[#FC81A0]">Bunky</span>
         </Link>
         <nav className="ml-auto hidden gap-6 md:flex">
-          <Link href="#features" className="text-sm font-medium hover:text-[#FC81A0]">
+          <button onClick={() => scrollToSection("features")} className="text-sm font-medium hover:text-[#FC81A0]">
             Features
-          </Link>
-          {/* <Link href="#tours" className="text-sm font-medium hover:text-[#FC81A0]">
-            Tours
-          </Link> */}
-          <Link href="#about" className="text-sm font-medium hover:text-[#FC81A0]">
+          </button>
+          <button onClick={() => scrollToSection("about")} className="text-sm font-medium hover:text-[#FC81A0]">
             About
-          </Link>
-          <Link href="#testimonials" className="text-sm font-medium hover:text-[#FC81A0]">
+          </button>
+          <button onClick={() => scrollToSection("testimonials")} className="text-sm font-medium hover:text-[#FC81A0]">
             Testimonials
-          </Link>
-          <Link href="#contact" className="text-sm font-medium hover:text-[#FC81A0]">
+          </button>
+          <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-[#FC81A0]">
             Contact
-          </Link>
+          </button>
         </nav>
         <div className="ml-auto md:ml-4 flex gap-2">
-          <Button variant="outline" className="hidden md:inline-flex border-[#FC81A0] text-[#FC81A0]">
-            Sign In
-          </Button>
-          <Button className="hidden md:inline-flex bg-[#FC81A0] hover:bg-[#e06d8a]">Sign Up</Button>
+          <Button className="hidden md:inline-flex bg-[#FC81A0] hover:bg-[#e06d8a]">Book Now</Button>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -44,46 +48,25 @@ export function Header() {
       {isMenuOpen && (
         <div className="container md:hidden">
           <nav className="flex flex-col gap-4 p-4">
-            <Link
-              href="#features"
-              className="text-sm font-medium hover:text-[#FC81A0]"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("features")}>
               Features
-            </Link>
-            <Link
-              href="#tours"
-              className="text-sm font-medium hover:text-[#FC81A0]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Tours
-            </Link>
-            <Link
-              href="#about"
-              className="text-sm font-medium hover:text-[#FC81A0]"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            </button>
+            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("about")}>
               About
-            </Link>
-            <Link
-              href="#testimonials"
+            </button>
+            <button
               className="text-sm font-medium hover:text-[#FC81A0]"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => scrollToSection("testimonials")}
             >
               Testimonials
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium hover:text-[#FC81A0]"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            </button>
+            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("contact")}>
               Contact
-            </Link>
+            </button>
             <div className="flex gap-2 pt-2">
-              <Button variant="outline" className="w-full border-[#FC81A0] text-[#FC81A0]">
-                Sign In
+              <Button size="lg" className="w-full bg-[#FC81A0] hover:bg-[#e06d8a]">
+                Book Now
               </Button>
-              <Button className="w-full bg-[#FC81A0] hover:bg-[#e06d8a]">Sign Up</Button>
             </div>
           </nav>
         </div>
