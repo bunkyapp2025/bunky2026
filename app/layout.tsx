@@ -4,8 +4,12 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { MaintenancePage } from "@/components/maintenance-page"
 
 const inter = Inter({ subsets: ["latin"] })
+
+// Set this to true to enable maintenance mode, false to disable
+const MAINTENANCE_MODE = true
 
 export const metadata: Metadata = {
   title: "Bunky - Your All-in-One Travel Platform",
@@ -22,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
+          {MAINTENANCE_MODE ? <MaintenancePage /> : children}
           <ScrollToTop />
         </ThemeProvider>
       </body>
