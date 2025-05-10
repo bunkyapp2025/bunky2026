@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -12,12 +14,22 @@ import { FAQ } from "@/components/faq"
 import { ContactForm } from "@/components/contact-form"
 import { HostPartnerCTA } from "@/components/host-partner-cta"
 import { AdSection } from "@/components/ad-section"
+import { AppDownloadBanner } from "@/components/app-download-banner"
 import { Star, MapPin, TrendingUp } from "lucide-react"
 
 export default function Home() {
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      <AppDownloadBanner />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-white py-20 md:py-32">
@@ -45,6 +57,7 @@ export default function Home() {
                     your stay and adventure in one place.
                   </p>
                 </div>
+
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button
                     size="lg"
@@ -52,8 +65,13 @@ export default function Home() {
                   >
                     Book Now
                   </Button>
-                  <Button size="lg" variant="outline" className="border-[#FC81A0] text-[#FC81A0] hover:bg-[#FC81A0]/10">
-                    Explore Packages
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-[#FC81A0] text-[#FC81A0] hover:bg-[#FC81A0]/10"
+                    onClick={() => scrollToSection("host-partner-cta")}
+                  >
+                    Partner with Us
                   </Button>
                 </div>
 
@@ -100,7 +118,7 @@ export default function Home() {
                     <div className="flex items-center h-full">
                       <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
                         <Image
-                          src="/placeholder.svg?height=50&width=50"
+                          src="/placeholder.svg?height=70&width=70"
                           alt="Beach destination"
                           width={70}
                           height={70}
@@ -166,14 +184,14 @@ export default function Home() {
         {/* Testimonials */}
         <Testimonials />
 
-        {/* Team */}
-        <Team />
+        {/* Host & Partner CTA */}
+        <HostPartnerCTA />
 
         {/* FAQ */}
         <FAQ />
 
-        {/* Host & Partner CTA */}
-        <HostPartnerCTA />
+        {/* Team */}
+        <Team />
 
         {/* Contact Form */}
         <ContactForm />

@@ -5,7 +5,7 @@ import { Home, Megaphone } from "lucide-react"
 
 export function HostPartnerCTA() {
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section id="host-partner-cta" className="bg-gray-50 py-16 md:py-24">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">

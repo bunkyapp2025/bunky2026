@@ -7,6 +7,7 @@ import Link from "next/link"
 import { Facebook, Instagram, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { QRCodeCard } from "@/components/qr-code-card"
 
 export function Footer() {
   const [email, setEmail] = useState("")

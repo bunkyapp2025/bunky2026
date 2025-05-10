@@ -1,0 +1,207 @@
+{
+  "featuredRentals": [
+    {
+      "id": 1,
+      "name": "Breeze Bay Villa",
+      "location": "Station 1, Boracay",
+      "price": "₱10,000",
+      "rating": 4.8,
+      "reviews": 120,
+      "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 2,
+      "name": "Jungle Retreat",
+      "location": "Panglao, Bohol",
+      "price": "₱3,500",
+      "rating": 4.7,
+      "reviews": 98,
+      "image": "https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    }
+  ],
+  "topRatedRentals": [
+    {
+      "id": 3,
+      "name": "Skyline Loft",
+      "location": "Salcedo, Makati",
+      "price": "₱2,800",
+      "rating": 4.9,
+      "reviews": 156,
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 4,
+      "name": "Tropical Hideout",
+      "location": "Coron, Palawan",
+      "price": "₱2,000",
+      "rating": 4.8,
+      "reviews": 73,
+      "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    }
+  ],
+  "discountedRentals": [
+    {
+      "id": 5,
+      "name": "Sunset Cliff House",
+      "location": "Corong-Corong, El Nido",
+      "price": "₱5,000",
+      "originalPrice": "₱6,000",
+      "discount": "20% off",
+      "rating": 4.9,
+      "reviews": 104,
+      "image": "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 6,
+      "name": "Heritage Cottage",
+      "location": "Parian, Cebu City",
+      "price": "₱1,800",
+      "originalPrice": "₱3,600",
+      "discount": "50% off",
+      "rating": 4.7,
+      "reviews": 89,
+      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    }
+  ],
+  "travelItineraries": [
+    {
+      "id": 7,
+      "name": "Boracay Escape: 3 Days of Sun, Sand, and Adventure",
+      "description": "Discover the best of Boracay in three unforgettable days! This itinerary covers the iconic White Beach, thrilling island hopping, and vibrant nightlife.",
+      "priceRange": "₱3,500-₱10,000",
+      "perHead": true,
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+    },
+    {
+      "id": 8,
+      "name": "Palawan Island Hopping Adventure",
+      "description": "Explore the hidden lagoons and pristine beaches of Palawan with this comprehensive island hopping guide.",
+      "priceRange": "₱4,500-₱12,000",
+      "perHead": true,
+      "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+    }
+  ],
+  "propertyDetails": {
+    "id": 1,
+    "name": "Tropical Hideout",
+    "location": "Gen Luna, Siargao",
+    "rating": 4.8,
+    "reviews": 73,
+    "price": "₱2,000",
+    "perDay": true,
+    "rooms": 2,
+    "bathrooms": 1,
+    "beds": 1,
+    "area": "874 m²",
+    "images": [
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1560185008-a33f5c7b1844?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    ],
+    "amenities": {
+      "home": ["Air condition", "Pet friendly", "Kitchen", "TV", "Garage", "Pool", "Free WiFi", "Washer"],
+      "other": [
+        "Welcome Pack: Complimentary snacks, coffee, tea, and bottled water upon arrival.",
+        "Workspace Desk: Adjustable chair, and high-speed Wi-Fi for remote work.",
+        "Pet-Friendly: Bowls, pet bed, and a small pet fee may apply.",
+        "Local Guidebook: A list of nearby attractions, restaurants, and hidden gems.",
+        "Family-Friendly Extras: Baby crib, high chair, and kid-friendly utensils.",
+        "Outdoor Essentials: BBQ grill, fire pit, and patio seating.",
+        "Security Features: Smart lock, security cameras (outside only), and a safe.",
+        "Beach Gear: Towels, umbrella, cooler, and beach toys.",
+        "Fitness Equipment: Yoga mat, dumbbells, and resistance bands.",
+        "Entertainment Options: Board games, streaming services, and books."
+      ]
+    },
+    "nearbyFacilities": [
+      { "name": "Minimarket", "distance": "100m" },
+      { "name": "Hospital", "distance": "1.5km" },
+      { "name": "Public canteen", "distance": "400m" },
+      { "name": "Train station", "distance": "500m" }
+    ],
+    "description": "This cabin comes with Smart Home System and beautiful viking style. You can see the sunrise in the morning with City View from full windows. This unit is surrounded by business district of West Surabaya that offers you the city life as well as variety of culinary options.",
+    "reviewItems": [
+      {
+        "id": 1,
+        "name": "Sara Jose",
+        "date": "October 2023",
+        "rating": 5,
+        "comment": "My wife and I had always dreamed of staying in a treehouse in Cape Elizabeth into a small condo under the stars we work and play in Portland. David and his skilled team helped make that dream a reality. The sale went smoothly, and we couldn't be happier with the place we're excited..."
+      },
+      {
+        "id": 2,
+        "name": "Anita Cruz",
+        "date": "September 2023",
+        "rating": 4,
+        "comment": "My wife and I had always dreamed of staying in a treehouse in Cape Elizabeth into a small condo under the stars we work and play in Portland. David and his skilled team helped make that dream a reality. The sale went smoothly, and we couldn't be happier with the place we're excited..."
+      }
+    ]
+  },
+  "itineraryDetails": {
+    "id": 7,
+    "name": "Boracay Escape: 2 Days of Sun, Sand, and Adventure",
+    "description": "Discover the best of Boracay in three unforgettable days! This itinerary covers the iconic White Beach, thrilling island hopping, and vibrant nightlife. Whether you're a beach lover, adventure seeker, or foodie, this guide has everything you need for the ultimate Boracay experience.",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    ],
+    "packages": [
+      {
+        "name": "Budget Escape",
+        "price": "₱3,500",
+        "perHead": true,
+        "duration": "2 days, 1 night",
+        "description": "Affordable adventure with island hopping, beach sunsets, and local eats—perfect for budget travelers!",
+        "schedule": [
+          {
+            "day": 1,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Arrival at Caticlan Jetty Port & boat transfer to Boracay" },
+              { "time": "9:00 AM", "activity": "Check-in at a budget hostel (e.g., Chill Out Hostel, Station 2)" },
+              { "time": "10:00 AM", "activity": "DIY Island Hopping (Puka Beach, Coral Garden, and Magic Island)" },
+              { "time": "11:00 AM", "activity": "Lunch at a local eatery" },
+              { "time": "3:00 PM", "activity": "Explore White Beach and watch the sunset at Station 1" },
+              { "time": "6:00 PM", "activity": "Dinner at Smoke Resto" },
+              { "time": "8:00 PM", "activity": "Nightlife (Budget-friendly drinks at Epic Bar)" }
+            ]
+          },
+          {
+            "day": 2,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Breakfast at hostel" },
+              { "time": "9:00 AM", "activity": "Beach activities (swimming, sunbathing)" },
+              { "time": "12:00 PM", "activity": "Lunch at D'Talipapa market - pick your seafood" },
+              { "time": "2:00 PM", "activity": "Souvenir shopping at D'Mall" },
+              { "time": "4:00 PM", "activity": "Departure from Boracay" }
+            ]
+          }
+        ],
+        "inclusions": ["Budget accommodation", "boat transfer", "DIY island hopping"],
+        "exclusions": ["Other activities", "personal expenses"]
+      },
+      {
+        "name": "Classic Adventure",
+        "price": "₱7,500",
+        "perHead": true,
+        "duration": "2 days, 1 night",
+        "description": "A balanced getaway with guided tours, beachfront dining, and fun water activities for a hassle-free trip!"
+      },
+      {
+        "name": "Luxurious Getaway",
+        "price": "₱10,000",
+        "perHead": true,
+        "duration": "2 days, 1 night",
+        "description": "Indulge in VIP experiences with private yacht tours, 5-star resorts, and fine dining by the beach!"
+      }
+    ]
+  }
+}

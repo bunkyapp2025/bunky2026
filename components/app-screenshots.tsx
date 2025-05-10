@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { QRCodeCard } from "@/components/qr-code-card"
 
 export function AppScreenshots() {
   return (
@@ -65,6 +66,22 @@ export function AppScreenshots() {
                       <span>Save favorites for later</span>
                     </li>
                   </ul>
+
+                  {/* QR Code Download Section */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                      <QRCodeCard
+                        storeName="Google Play"
+                        storeLabel="GET IT ON"
+                        storeUrl="https://play.google.com/store"
+                      />
+                      <QRCodeCard
+                        storeName="App Store"
+                        storeLabel="DOWNLOAD ON THE"
+                        storeUrl="https://apps.apple.com"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </TabsContent>
@@ -98,6 +115,22 @@ export function AppScreenshots() {
                       <span>Instant confirmation</span>
                     </li>
                   </ul>
+
+                  {/* QR Code Download Section */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                      <QRCodeCard
+                        storeName="Google Play"
+                        storeLabel="GET IT ON"
+                        storeUrl="https://play.google.com/store"
+                      />
+                      <QRCodeCard
+                        storeName="App Store"
+                        storeLabel="DOWNLOAD ON THE"
+                        storeUrl="https://apps.apple.com"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </TabsContent>
@@ -131,6 +164,22 @@ export function AppScreenshots() {
                       <span>Offline access to important information</span>
                     </li>
                   </ul>
+
+                  {/* QR Code Download Section */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                      <QRCodeCard
+                        storeName="Google Play"
+                        storeLabel="GET IT ON"
+                        storeUrl="https://play.google.com/store"
+                      />
+                      <QRCodeCard
+                        storeName="App Store"
+                        storeLabel="DOWNLOAD ON THE"
+                        storeUrl="https://apps.apple.com"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </TabsContent>
