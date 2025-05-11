@@ -1,47 +1,40 @@
+"use client"
+
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import Link from "next/link"
 import contentData from "@/data/content.json"
 
-export function QRCodeCard() {
-  const qrCodes = contentData.qrCodes || {
-    googlePlay: "/placeholder.svg?height=150&width=150",
-    appStore: "/placeholder.svg?height=150&width=150",
-  }
+interface QRCodeCardProps {
+  storeName: string
+  storeLabel: string
+  storeUrl: string
+  size?: "small" | "medium" | "large"
+}
+
+export function QRCodeCard({ storeName, storeLabel, storeUrl, size = "medium" }: QRCodeCardProps) {
+  // Get QR code image based on store name
+  const qrCodeImage = storeName === "Google Play" ? contentData.qrCodes.googlePlay : contentData.qrCodes.appStore
 
   return (
-    <Card className="overflow-hidden border-2 border-[#FC81A0]/10">
-      <CardContent className="p-6">
-        <div className="flex flex-col items-center space-y-4">
-          <h3 className="text-xl font-bold">Scan to Download</h3>
-          <p className="text-center text-sm text-gray-500">
-            Scan these QR codes to download the Bunky app on your mobile device.
-          </p>
-          <div className="grid grid-cols-2 gap-6 pt-4">
-            <div className="flex flex-col items-center space-y-2">
-              <div className="relative h-32 w-32 overflow-hidden rounded-lg">
-                <Image
-                  src={qrCodes.googlePlay || "/placeholder.svg"}
-                  alt="Google Play QR Code"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-sm font-medium">Google Play</p>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="relative h-32 w-32 overflow-hidden rounded-lg">
-                <Image
-                  src={qrCodes.appStore || "/placeholder.svg"}
-                  alt="App Store QR Code"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-sm font-medium">App Store</p>
-            </div>
-          </div>
+    <Link href={storeUrl} target="_blank">
+      <div
+        className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+        title="Scan or tap to download"
+      >
+        <div className="relative h-12 w-12 flex-shrink-0">
+          <Image
+            src={qrCodeImage || "/placeholder.svg"}
+            alt={`${storeName} QR Code`}
+            width={50}
+            height={50}
+            className="rounded-md"
+          />
         </div>
-      </CardContent>
-    </Card>
+        <div className="flex flex-col text-gray-500">
+          <span className="text-xs">{storeLabel}</span>
+          <span className="font-bold text-sm">{storeName}</span>
+        </div>
+      </div>
+    </Link>
   )
 }

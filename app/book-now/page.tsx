@@ -182,19 +182,12 @@ export default function BookNow() {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-              <QRCodeCard
-                storeName="Google Play"
-                storeLabel="GET IT ON"
-                storeUrl="https://play.google.com/store"
-                size="large"
-              />
-              <QRCodeCard
-                storeName="App Store"
-                storeLabel="DOWNLOAD ON THE"
-                storeUrl="https://apps.apple.com"
-                size="large"
-              />
+            {/* QR Code Download Section */}
+            <div className="mt-8 pt-6 border-t border-gray-200 w-full">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <QRCodeCard storeName="Google Play" storeLabel="GET IT ON" storeUrl="https://play.google.com/store" />
+                <QRCodeCard storeName="App Store" storeLabel="DOWNLOAD ON" storeUrl="https://apps.apple.com" />
+              </div>
             </div>
 
             <p className="text-sm text-gray-500 text-center mt-4">

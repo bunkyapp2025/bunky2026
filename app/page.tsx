@@ -120,12 +120,11 @@ export default function Home() {
                   {/* Floating Elements */}
                   <div className="absolute -top-6 -left-6 h-20 w-36 rounded-lg bg-white p-2 shadow-lg rotate-[-6deg] animate-float">
                     <div className="flex items-center h-full">
-                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
+                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2 relative">
                         <Image
                           src={contentData.landingPageImages?.palawanCard || "/placeholder.svg?height=70&width=70"}
                           alt="Palawan destination"
-                          width={70}
-                          height={70}
+                          fill
                           className="object-cover"
                         />
                       </div>
@@ -146,12 +145,11 @@ export default function Home() {
                     style={{ animationDelay: "1s" }}
                   >
                     <div className="flex items-center h-full">
-                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
+                      <div className="h-16 w-16 rounded-md overflow-hidden mr-2 relative">
                         <Image
                           src={contentData.landingPageImages?.boracayCard || "/placeholder.svg?height=70&width=70"}
                           alt="Boracay destination"
-                          width={70}
-                          height={70}
+                          fill
                           className="object-cover"
                         />
                       </div>

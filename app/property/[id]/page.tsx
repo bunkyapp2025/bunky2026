@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import Link from "next/link"
+
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
@@ -8,7 +10,6 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Star, MapPin, ArrowLeft, Bed, Bath, Home, SquareUser, Check, ChevronLeft, ChevronRight } from "lucide-react"
-import { QRCodeCard } from "@/components/qr-code-card"
 import { SimilarProperties } from "@/components/similar-properties"
 import contentData from "@/data/content.json"
 import { AvailabilityCalendar } from "@/components/availability-calendar"
@@ -16,12 +17,60 @@ import { AvailabilityCalendar } from "@/components/availability-calendar"
 export default function PropertyDetails({ params }) {
   const [showDownloadModal, setShowDownloadModal] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [property, setProperty] = useState(null)
   const router = useRouter()
   const { id } = params
 
-  // Get property data from the JSON file
-  // For simplicity, we'll use the same property data for any ID
-  const property = contentData.propertyDetails
+  // Find the property data based on the ID
+  useEffect(() => {
+    // Combine all rental arrays to search through
+    const allRentals = [
+      ...contentData.featuredRentals,
+      ...contentData.topRatedRentals,
+      ...contentData.discountedRentals,
+    ]
+
+    // Find the property with the matching ID
+    const foundProperty = allRentals.find((rental) => rental.id.toString() === id)
+
+    if (foundProperty) {
+      // Create a full property object by combining the found rental with additional details
+      setProperty({
+        ...foundProperty,
+        rooms: 2,
+        bathrooms: 1,
+        beds: 1,
+        area: "874 m²",
+        images: [
+          foundProperty.image,
+          ...contentData.propertyDetails.images.slice(0, 5), // Use some default images as additional images
+        ],
+        amenities: contentData.propertyDetails.amenities,
+        nearbyFacilities: contentData.propertyDetails.nearbyFacilities,
+        description: contentData.propertyDetails.description,
+        mapUrl: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.478619864698!2d126.01351389999999!3d9.848999999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3350c9e7ef2c7e7f%3A0xf2f0160b49550dab!2s${encodeURIComponent(foundProperty.location)}!5e0!3m2!1sen!2sph!4v1620000000000!5m2!1sen!2sph`,
+      })
+    } else {
+      // If property not found, use the default property details
+      setProperty(contentData.propertyDetails)
+    }
+  }, [id])
+
+  // If property is not loaded yet, show loading state
+  if (!property) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1 bg-white p-8 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FC81A0] mx-auto"></div>
+            <p className="mt-4 text-gray-500">Loading property details...</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
 
   // Navigate to previous image
   const prevImage = () => {
@@ -209,56 +258,6 @@ export default function PropertyDetails({ params }) {
           {/* Availability Calendar */}
           <AvailabilityCalendar />
 
-          {/* Reviews */}
-          {/* Reviews Section - Commented out as requested
-          <div className="mt-8">
-            <h2 className="text-2xl font-bold mb-4">Reviews</h2>
-            <div className="space-y-4">
-              {property.reviewItems?.map((review) => (
-                <div key={review.id} className="border-b border-gray-200 pb-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center">
-                      <div className="mr-3">
-                        <Image
-                          src="/placeholder.svg?height=40&width=40"
-                          alt={review.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-medium">{review.name}</p>
-                        <p className="text-sm text-gray-500">{review.date}</p>
-                      </div>
-                    </div>
-                    <div className="flex">
-                      {Array(5)
-                        .fill(0)
-                        .map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < review.rating ? "text-[#FC81A0] fill-[#FC81A0]" : "text-gray-300"
-                            }`}
-                          />
-                        ))}
-                    </div>
-                  </div>
-                  <p className="mt-2 text-gray-600">{review.comment}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          */}
-
-          {/* Review Form */}
-          {/* Review Form - Commented out as requested
-          <div className="mt-8">
-            <ReviewForm propertyId={property.id} />
-          </div>
-          */}
-
           {/* Similar Properties */}
           <SimilarProperties currentPropertyId={id} />
         </div>
@@ -267,7 +266,7 @@ export default function PropertyDetails({ params }) {
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between">
           <div>
             <span className="font-bold text-xl">{property.price}</span>
-            <span className="text-gray-500 text-sm ml-1">/day</span>
+            <span className="text-gray-500 text-sm ml-1">{property.perDay ? "/day" : ""}</span>
           </div>
           <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]" onClick={() => setShowDownloadModal(true)}>
             Book Now
@@ -294,19 +293,51 @@ export default function PropertyDetails({ params }) {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-              <QRCodeCard
-                storeName="Google Play"
-                storeLabel="GET IT ON"
-                storeUrl="https://play.google.com/store"
-                size="large"
-              />
-              <QRCodeCard
-                storeName="App Store"
-                storeLabel="DOWNLOAD ON THE"
-                storeUrl="https://apps.apple.com"
-                size="large"
-              />
+            {/* QR Code Download Section */}
+            <div className="mt-8 pt-6 border-t border-gray-200 w-full">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="https://play.google.com/store" target="_blank">
+                  <div
+                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                    title="Scan or tap to download"
+                  >
+                    <div className="relative h-12 w-12 flex-shrink-0">
+                      <Image
+                        src={contentData.qrCodes.googlePlay || "/placeholder.svg"}
+                        alt="Google Play QR Code"
+                        width={50}
+                        height={50}
+                        className="rounded-md"
+                      />
+                    </div>
+                    <div className="flex flex-col text-gray-500">
+                      <span className="text-xs">GET IT ON</span>
+                      <span className="font-bold text-sm">Google Play</span>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link href="https://apps.apple.com" target="_blank">
+                  <div
+                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                    title="Scan or tap to download"
+                  >
+                    <div className="relative h-12 w-12 flex-shrink-0">
+                      <Image
+                        src={contentData.qrCodes.appStore || "/placeholder.svg"}
+                        alt="App Store QR Code"
+                        width={50}
+                        height={50}
+                        className="rounded-md"
+                      />
+                    </div>
+                    <div className="flex flex-col text-gray-500">
+                      <span className="text-xs">DOWNLOAD ON</span>
+                      <span className="font-bold text-sm">App Store</span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             </div>
 
             <p className="text-sm text-gray-500 text-center mt-4">

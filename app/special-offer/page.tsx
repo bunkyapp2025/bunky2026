@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check, Calendar, Clock, Tag } from "lucide-react"
+import contentData from "@/data/content.json"
 
 export default function SpecialOffer() {
   return (
@@ -45,7 +46,7 @@ export default function SpecialOffer() {
               <div className="flex items-center justify-center">
                 <div className="relative h-[300px] w-full rounded-xl overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
+                    src={contentData.landingPageImages.adOffer || "/placeholder.svg"}
                     alt="Special Offer"
                     fill
                     className="object-cover"
