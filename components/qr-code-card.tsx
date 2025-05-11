@@ -21,13 +21,12 @@ export function QRCodeCard({ storeName, storeLabel, storeUrl, size = "medium" }:
         className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
         title="Scan or tap to download"
       >
-        <div className="relative h-12 w-12 flex-shrink-0">
+        <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden">
           <Image
-            src={qrCodeImage || "/placeholder.svg"}
+            src={qrCodeImage || "/placeholder.svg?height=48&width=48"}
             alt={`${storeName} QR Code`}
-            width={50}
-            height={50}
-            className="rounded-md"
+            fill
+            className="object-cover rounded-md"
           />
         </div>
         <div className="flex flex-col text-gray-500">

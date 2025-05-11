@@ -123,10 +123,6 @@ export default function SpecialOffer() {
                   </CardContent>
                 </Card>
               </div>
-
-              <div className="flex justify-center">
-                <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]">Browse Tour Packages</Button>
-              </div>
             </div>
           </div>
         </section>

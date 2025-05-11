@@ -173,12 +173,13 @@ export default function BookNow() {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center space-y-4 py-4">
-            <div className="relative h-[200px] w-[300px] rounded-lg overflow-hidden">
+            <div className="relative h-[150px] w-[150px] flex items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                alt="Bunky App Screenshot"
-                fill
-                className="object-cover"
+                src="/images/bunky-logo.png"
+                alt="Bunky Logo"
+                width={150}
+                height={150}
+                className="object-contain"
               />
             </div>
 
