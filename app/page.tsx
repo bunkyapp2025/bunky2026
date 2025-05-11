@@ -65,6 +65,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     className="bg-[#FC81A0] hover:bg-[#e06d8a] shadow-lg transition-all hover:translate-y-[-2px]"
+                    onClick={() => (window.location.href = "/book-now")}
                   >
                     Book Now
                   </Button>
@@ -121,8 +122,8 @@ export default function Home() {
                     <div className="flex items-center h-full">
                       <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
                         <Image
-                          src="/placeholder.svg?height=70&width=70"
-                          alt="Beach destination"
+                          src={contentData.landingPageImages?.palawanCard || "/placeholder.svg?height=70&width=70"}
+                          alt="Palawan destination"
                           width={70}
                           height={70}
                           className="object-cover"
@@ -147,8 +148,8 @@ export default function Home() {
                     <div className="flex items-center h-full">
                       <div className="h-16 w-16 rounded-md overflow-hidden mr-2">
                         <Image
-                          src="/placeholder.svg?height=70&width=70"
-                          alt="Mountain destination"
+                          src={contentData.landingPageImages?.boracayCard || "/placeholder.svg?height=70&width=70"}
+                          alt="Boracay destination"
                           width={70}
                           height={70}
                           className="object-cover"

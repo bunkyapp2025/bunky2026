@@ -240,7 +240,8 @@
         "rating": 4,
         "comment": "My wife and I had always dreamed of staying in a treehouse in Cape Elizabeth into a small condo under the stars we work and play in Portland. David and his skilled team helped make that dream a reality. The sale went smoothly, and we couldn't be happier with the place we're excited..."
       }
-    ]
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.478619864698!2d126.01351389999999!3d9.848999999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3350c9e7ef2c7e7f%3A0xf2f0160b49550dab!2sGeneral%20Luna%2C%20Siargao%20Island%2C%20Surigao%20del%20Norte!5e0!3m2!1sen!2sph!4v1620000000000!5m2!1sen!2sph"
   },
   "itineraryDetails": {
     "id": 16,
@@ -419,12 +420,117 @@
   },
   "landingPageImages": {
     "hero": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "appScreenshots": [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-    ],
+    "appScreenshots": ["/images/app-screenshot-1.jpg", "/images/app-screenshot-2.jpg", "/images/app-screenshot-3.jpg"],
     "mission": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "vision": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  }
+    "vision": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "adOffer": "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+    "palawanCard": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+    "boracayCard": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+  },
+  "qrCodes": {
+    "googlePlay": "/images/google-play-qr.png",
+    "appStore": "/images/app-store-qr.png"
+  },
+  "partners": [
+    {
+      "id": 1,
+      "name": "Airbnb",
+      "logo": "/images/partner-1.png",
+      "website": "https://www.airbnb.com"
+    },
+    {
+      "id": 2,
+      "name": "Booking.com",
+      "logo": "/images/partner-2.png",
+      "website": "https://www.booking.com"
+    },
+    {
+      "id": 3,
+      "name": "Expedia",
+      "logo": "/images/partner-3.png",
+      "website": "https://www.expedia.com"
+    },
+    {
+      "id": 4,
+      "name": "TripAdvisor",
+      "logo": "/images/partner-4.png",
+      "website": "https://www.tripadvisor.com"
+    },
+    {
+      "id": 5,
+      "name": "Agoda",
+      "logo": "/images/partner-5.png",
+      "website": "https://www.agoda.com"
+    },
+    {
+      "id": 6,
+      "name": "Hotels.com",
+      "logo": "/images/partner-6.png",
+      "website": "https://www.hotels.com"
+    }
+  ],
+  "testimonials": [
+    {
+      "content": "Bunky made our honeymoon absolutely perfect! The tour package was well-organized, and our local guide was knowledgeable and friendly. We'll definitely be using Bunky for our future travels.",
+      "name": "Sarah & Michael",
+      "location": "New York, USA",
+      "avatar": "/images/testimonial-1.jpg"
+    },
+    {
+      "content": "As a solo traveler, I was looking for a safe and authentic experience. Bunky delivered beyond my expectations. The app was easy to use, and the customer support was exceptional.",
+      "name": "James Wilson",
+      "location": "London, UK",
+      "avatar": "/images/testimonial-2.jpg"
+    },
+    {
+      "content": "Our family vacation was stress-free thanks to Bunky. The kids loved the activities, and we appreciated how everything was taken care of. The accommodations were perfect for our needs.",
+      "name": "The Rodriguez Family",
+      "location": "Toronto, Canada",
+      "avatar": "/images/testimonial-3.jpg"
+    },
+    {
+      "content": "I've used many travel platforms, but Bunky stands out for its unique tour packages and attention to detail. The local experiences they arranged were truly unforgettable.",
+      "name": "Emma Chen",
+      "location": "Singapore",
+      "avatar": "/images/testimonial-4.jpg"
+    },
+    {
+      "content": "As a frequent business traveler, I appreciate efficiency and quality. Bunky's seamless booking process and premium accommodations make it my go-to platform for extending business trips.",
+      "name": "David Müller",
+      "location": "Berlin, Germany",
+      "avatar": "/images/testimonial-5.jpg"
+    },
+    {
+      "content": "The cultural immersion tour I booked through Bunky was the highlight of my year. The local guides were passionate about sharing their heritage, and I made friends for life.",
+      "name": "Priya Sharma",
+      "location": "Mumbai, India",
+      "avatar": "/images/testimonial-6.jpg"
+    }
+  ],
+  "team": [
+    {
+      "name": "Elena Rodriguez",
+      "role": "CEO & Founder",
+      "quote": "Travel has the power to transform lives. At Bunky, we're making that transformation accessible to everyone.",
+      "image": "/images/team-1.jpg"
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "Chief Technology Officer",
+      "quote": "We're leveraging technology to create seamless travel experiences that connect people with unforgettable destinations.",
+      "image": "/images/team-2.jpg"
+    },
+    {
+      "name": "Sophia Patel",
+      "role": "Head of Partnerships",
+      "quote": "Our partners are the backbone of Bunky. Together, we're creating a network of exceptional experiences worldwide.",
+      "image": "/images/team-3.jpg"
+    },
+    {
+      "name": "David Kim",
+      "role": "Customer Experience Director",
+      "quote": "Every interaction with Bunky should leave you feeling inspired, supported, and excited about your journey.",
+      "image": "/images/team-4.jpg"
+    }
+  ]
 }

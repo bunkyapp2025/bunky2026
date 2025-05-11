@@ -1,8 +1,43 @@
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Heart, Leaf, Lightbulb, Users, Award, Compass } from "lucide-react"
+import contentData from "@/data/content.json"
 
 export function Team() {
+  const team = contentData.team || []
+  const values = [
+    {
+      title: "Authenticity",
+      description: "We believe in real connections and genuine experiences.",
+      icon: Heart,
+    },
+    {
+      title: "Sustainability",
+      description: "We're committed to responsible tourism that benefits local communities.",
+      icon: Leaf,
+    },
+    {
+      title: "Innovation",
+      description: "We constantly seek new ways to improve the travel experience.",
+      icon: Lightbulb,
+    },
+    {
+      title: "Inclusivity",
+      description: "We create experiences that are accessible and welcoming to all.",
+      icon: Users,
+    },
+    {
+      title: "Excellence",
+      description: "We strive for the highest quality in everything we do.",
+      icon: Award,
+    },
+    {
+      title: "Passion",
+      description: "We're driven by our love for travel and cultural exchange.",
+      icon: Compass,
+    },
+  ]
+
   return (
     <section id="team" className="bg-gray-50 py-16 md:py-24">
       <div className="container px-4 md:px-6">
@@ -19,7 +54,12 @@ export function Team() {
           {team.map((member, i) => (
             <Card key={i} className="overflow-hidden border-2 border-[#FC81A0]/10">
               <div className="relative h-60">
-                <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                <Image
+                  src={member.image || "/placeholder.svg?height=240&width=240"}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <CardHeader className="p-4">
                 <CardTitle>{member.name}</CardTitle>
@@ -54,66 +94,3 @@ export function Team() {
     </section>
   )
 }
-
-const team = [
-  {
-    name: "Elena Rodriguez",
-    role: "CEO & Founder",
-    quote:
-      "Travel has the power to transform lives. At Bunky, we're making that transformation accessible to everyone.",
-    image: "/placeholder.svg?height=240&width=240",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Chief Technology Officer",
-    quote:
-      "We're leveraging technology to create seamless travel experiences that connect people with unforgettable destinations.",
-    image: "/placeholder.svg?height=240&width=240",
-  },
-  {
-    name: "Sophia Patel",
-    role: "Head of Partnerships",
-    quote:
-      "Our partners are the backbone of Bunky. Together, we're creating a network of exceptional experiences worldwide.",
-    image: "/placeholder.svg?height=240&width=240",
-  },
-  {
-    name: "David Kim",
-    role: "Customer Experience Director",
-    quote: "Every interaction with Bunky should leave you feeling inspired, supported, and excited about your journey.",
-    image: "/placeholder.svg?height=240&width=240",
-  },
-]
-
-const values = [
-  {
-    title: "Authenticity",
-    description: "We believe in real connections and genuine experiences.",
-    icon: Heart,
-  },
-  {
-    title: "Sustainability",
-    description: "We're committed to responsible tourism that benefits local communities.",
-    icon: Leaf,
-  },
-  {
-    title: "Innovation",
-    description: "We constantly seek new ways to improve the travel experience.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Inclusivity",
-    description: "We create experiences that are accessible and welcoming to all.",
-    icon: Users,
-  },
-  {
-    title: "Excellence",
-    description: "We strive for the highest quality in everything we do.",
-    icon: Award,
-  },
-  {
-    title: "Passion",
-    description: "We're driven by our love for travel and cultural exchange.",
-    icon: Compass,
-  },
-]

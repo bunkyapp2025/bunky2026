@@ -1,6 +1,6 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { QRCodeCard } from "@/components/qr-code-card"
 import contentData from "@/data/content.json"
 
 export function AppScreenshots() {
@@ -73,16 +73,47 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                      <QRCodeCard
-                        storeName="Google Play"
-                        storeLabel="GET IT ON"
-                        storeUrl="https://play.google.com/store"
-                      />
-                      <QRCodeCard
-                        storeName="App Store"
-                        storeLabel="DOWNLOAD ON THE"
-                        storeUrl="https://apps.apple.com"
-                      />
+                      <Link href="https://play.google.com/store" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="Google Play QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">GET IT ON</span>
+                            <span className="font-bold text-sm">Google Play</span>
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Link href="https://apps.apple.com" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="App Store QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">DOWNLOAD ON</span>
+                            <span className="font-bold text-sm">App Store</span>
+                          </div>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -122,16 +153,47 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                      <QRCodeCard
-                        storeName="Google Play"
-                        storeLabel="GET IT ON"
-                        storeUrl="https://play.google.com/store"
-                      />
-                      <QRCodeCard
-                        storeName="App Store"
-                        storeLabel="DOWNLOAD ON THE"
-                        storeUrl="https://apps.apple.com"
-                      />
+                      <Link href="https://play.google.com/store" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="Google Play QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">GET IT ON</span>
+                            <span className="font-bold text-sm">Google Play</span>
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Link href="https://apps.apple.com" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="App Store QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">DOWNLOAD ON</span>
+                            <span className="font-bold text-sm">App Store</span>
+                          </div>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -171,16 +233,47 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                      <QRCodeCard
-                        storeName="Google Play"
-                        storeLabel="GET IT ON"
-                        storeUrl="https://play.google.com/store"
-                      />
-                      <QRCodeCard
-                        storeName="App Store"
-                        storeLabel="DOWNLOAD ON THE"
-                        storeUrl="https://apps.apple.com"
-                      />
+                      <Link href="https://play.google.com/store" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="Google Play QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">GET IT ON</span>
+                            <span className="font-bold text-sm">Google Play</span>
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Link href="https://apps.apple.com" target="_blank">
+                        <div
+                          className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
+                          title="Scan or tap to download"
+                        >
+                          <div className="relative h-12 w-12 flex-shrink-0">
+                            <Image
+                              src="/placeholder.svg?height=48&width=48"
+                              alt="App Store QR Code"
+                              width={50}
+                              height={50}
+                              className="rounded-md"
+                            />
+                          </div>
+                          <div className="flex flex-col text-gray-500">
+                            <span className="text-xs">DOWNLOAD ON</span>
+                            <span className="font-bold text-sm">App Store</span>
+                          </div>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>

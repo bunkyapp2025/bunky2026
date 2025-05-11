@@ -1,8 +1,11 @@
 import Image from "next/image"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Star } from "lucide-react"
+import contentData from "@/data/content.json"
 
 export function Testimonials() {
+  const testimonials = contentData.testimonials || []
+
   return (
     <section id="testimonials" className="bg-white py-16 md:py-24">
       <div className="container px-4 md:px-6">
@@ -34,7 +37,7 @@ export function Testimonials() {
                   alt={testimonial.name}
                   width={40}
                   height={40}
-                  className="rounded-full"
+                  className="rounded-full object-cover h-10 w-10"
                 />
                 <div>
                   <p className="font-medium">{testimonial.name}</p>
@@ -48,48 +51,3 @@ export function Testimonials() {
     </section>
   )
 }
-
-const testimonials = [
-  {
-    content:
-      "Bunky made our honeymoon absolutely perfect! The tour package was well-organized, and our local guide was knowledgeable and friendly. We'll definitely be using Bunky for our future travels.",
-    name: "Sarah & Michael",
-    location: "New York, USA",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    content:
-      "As a solo traveler, I was looking for a safe and authentic experience. Bunky delivered beyond my expectations. The app was easy to use, and the customer support was exceptional.",
-    name: "James Wilson",
-    location: "London, UK",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    content:
-      "Our family vacation was stress-free thanks to Bunky. The kids loved the activities, and we appreciated how everything was taken care of. The accommodations were perfect for our needs.",
-    name: "The Rodriguez Family",
-    location: "Toronto, Canada",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    content:
-      "I've used many travel platforms, but Bunky stands out for its unique tour packages and attention to detail. The local experiences they arranged were truly unforgettable.",
-    name: "Emma Chen",
-    location: "Singapore",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    content:
-      "As a frequent business traveler, I appreciate efficiency and quality. Bunky's seamless booking process and premium accommodations make it my go-to platform for extending business trips.",
-    name: "David Müller",
-    location: "Berlin, Germany",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-  {
-    content:
-      "The cultural immersion tour I booked through Bunky was the highlight of my year. The local guides were passionate about sharing their heritage, and I made friends for life.",
-    name: "Priya Sharma",
-    location: "Mumbai, India",
-    avatar: "/placeholder.svg?height=40&width=40",
-  },
-]

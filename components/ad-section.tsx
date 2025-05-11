@@ -1,8 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import contentData from "@/data/content.json"
 
 export function AdSection() {
+  const adImage = contentData.landingPageImages?.adOffer || "/placeholder.svg?height=300&width=300"
+
   return (
     <section className="bg-white py-12 md:py-16">
       <div className="container px-4 md:px-6">
@@ -21,7 +26,12 @@ export function AdSection() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]">Book Now</Button>
+                <Button
+                  className="bg-[#FC81A0] hover:bg-[#e06d8a]"
+                  onClick={() => (window.location.href = "/book-now")}
+                >
+                  Book Now
+                </Button>
                 <Link href="/special-offer">
                   <Button variant="outline" className="border-[#FC81A0] text-[#FC81A0]">
                     Learn More
@@ -36,10 +46,10 @@ export function AdSection() {
             <div className="hidden lg:block">
               <div className="relative h-full w-full min-h-[200px]">
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src={adImage || "/placeholder.svg"}
                   alt="Special offer"
                   fill
-                  className="object-contain"
+                  className="object-cover rounded-lg"
                 />
               </div>
             </div>

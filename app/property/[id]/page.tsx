@@ -11,9 +11,7 @@ import { Star, MapPin, ArrowLeft, Bed, Bath, Home, SquareUser, Check, ChevronLef
 import { QRCodeCard } from "@/components/qr-code-card"
 import { SimilarProperties } from "@/components/similar-properties"
 import contentData from "@/data/content.json"
-import { PropertyMap } from "@/components/property-map"
 import { AvailabilityCalendar } from "@/components/availability-calendar"
-import { ReviewForm } from "@/components/review-form"
 
 export default function PropertyDetails({ params }) {
   const [showDownloadModal, setShowDownloadModal] = useState(false)
@@ -193,36 +191,73 @@ export default function PropertyDetails({ params }) {
           </div>
 
           {/* Property Map */}
-          <PropertyMap location={property.location} />
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold mb-4">Location</h2>
+            <div className="h-[400px] w-full rounded-lg overflow-hidden">
+              <iframe
+                src={property.mapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
 
           {/* Availability Calendar */}
           <AvailabilityCalendar />
 
           {/* Reviews */}
-          <div className="mt-6">
-            <h2 className="text-lg font-bold mb-3">Reviews</h2>
+          {/* Reviews Section - Commented out as requested
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold mb-4">Reviews</h2>
             <div className="space-y-4">
-              {property.reviewItems &&
-                property.reviewItems.map((review) => (
-                  <div key={review.id} className="border-b pb-4">
-                    <div className="flex justify-between">
+              {property.reviewItems?.map((review) => (
+                <div key={review.id} className="border-b border-gray-200 pb-4">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-center">
+                      <div className="mr-3">
+                        <Image
+                          src="/placeholder.svg?height=40&width=40"
+                          alt={review.name}
+                          width={40}
+                          height={40}
+                          className="rounded-full"
+                        />
+                      </div>
                       <div>
                         <p className="font-medium">{review.name}</p>
                         <p className="text-sm text-gray-500">{review.date}</p>
                       </div>
-                      <div className="flex items-center">
-                        <Star className="h-4 w-4 text-[#FC81A0] fill-[#FC81A0]" />
-                        <span className="text-sm ml-1">{review.rating}</span>
-                      </div>
                     </div>
-                    <p className="text-sm mt-2">{review.comment}</p>
+                    <div className="flex">
+                      {Array(5)
+                        .fill(0)
+                        .map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${
+                              i < review.rating ? "text-[#FC81A0] fill-[#FC81A0]" : "text-gray-300"
+                            }`}
+                          />
+                        ))}
+                    </div>
                   </div>
-                ))}
+                  <p className="mt-2 text-gray-600">{review.comment}</p>
+                </div>
+              ))}
             </div>
           </div>
+          */}
 
           {/* Review Form */}
-          <ReviewForm />
+          {/* Review Form - Commented out as requested
+          <div className="mt-8">
+            <ReviewForm propertyId={property.id} />
+          </div>
+          */}
 
           {/* Similar Properties */}
           <SimilarProperties currentPropertyId={id} />

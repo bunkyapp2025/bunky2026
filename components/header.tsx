@@ -7,6 +7,8 @@ import { useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
+
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,7 +43,14 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-16 items-center px-4 sm:px-6">
         <Link href="/" className="flex items-center" onClick={handleLogoClick}>
-          <span className="text-2xl font-bold text-[#FC81A0]">Bunky</span>
+          <Image
+            src="/images/bunky-logo.png"
+            alt="Bunky Logo"
+            width={120}
+            height={40}
+            priority
+          />
+
         </Link>
         <nav className="ml-auto hidden gap-6 md:flex">
           <button onClick={() => scrollToSection("features")} className="text-sm font-medium hover:text-[#FC81A0]">
