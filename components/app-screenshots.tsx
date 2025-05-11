@@ -1,8 +1,11 @@
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { QRCodeCard } from "@/components/qr-code-card"
+import contentData from "@/data/content.json"
 
 export function AppScreenshots() {
+  const images = contentData.landingPageImages?.appScreenshots || []
+
   return (
     <section id="app" className="bg-white py-16 md:py-24">
       <div className="container px-4 md:px-6">
@@ -40,7 +43,7 @@ export function AppScreenshots() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
                   <Image
-                    src="/placeholder.svg?height=600&width=300"
+                    src={images[0] || "/placeholder.svg?height=600&width=300"}
                     alt="Bunky App Discover Screen"
                     fill
                     className="object-cover"
@@ -89,7 +92,7 @@ export function AppScreenshots() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
                   <Image
-                    src="/placeholder.svg?height=600&width=300"
+                    src={images[1] || "/placeholder.svg?height=600&width=300"}
                     alt="Bunky App Booking Screen"
                     fill
                     className="object-cover"
@@ -138,7 +141,7 @@ export function AppScreenshots() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
                   <Image
-                    src="/placeholder.svg?height=600&width=300"
+                    src={images[2] || "/placeholder.svg?height=600&width=300"}
                     alt="Bunky App Experience Screen"
                     fill
                     className="object-cover"

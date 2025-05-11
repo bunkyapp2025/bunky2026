@@ -19,11 +19,41 @@
       "reviews": 98,
       "image": "https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "perDay": true
+    },
+    {
+      "id": 3,
+      "name": "Beachfront Cottage",
+      "location": "El Nido, Palawan",
+      "price": "₱8,500",
+      "rating": 4.9,
+      "reviews": 145,
+      "image": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 4,
+      "name": "Mountain View Cabin",
+      "location": "Sagada, Mountain Province",
+      "price": "₱4,200",
+      "rating": 4.6,
+      "reviews": 87,
+      "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 5,
+      "name": "Urban Loft",
+      "location": "BGC, Manila",
+      "price": "₱6,000",
+      "rating": 4.7,
+      "reviews": 112,
+      "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+      "perDay": true
     }
   ],
   "topRatedRentals": [
     {
-      "id": 3,
+      "id": 6,
       "name": "Skyline Loft",
       "location": "Salcedo, Makati",
       "price": "₱2,800",
@@ -33,19 +63,49 @@
       "perDay": true
     },
     {
-      "id": 4,
+      "id": 7,
       "name": "Tropical Hideout",
       "location": "Coron, Palawan",
       "price": "₱2,000",
       "rating": 4.8,
       "reviews": 73,
-      "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 8,
+      "name": "Luxury Beachfront",
+      "location": "Bantayan Island, Cebu",
+      "price": "₱12,000",
+      "rating": 5.0,
+      "reviews": 89,
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 9,
+      "name": "Riverside Retreat",
+      "location": "Loboc, Bohol",
+      "price": "₱5,500",
+      "rating": 4.9,
+      "reviews": 67,
+      "image": "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+      "perDay": true
+    },
+    {
+      "id": 10,
+      "name": "Heritage Home",
+      "location": "Vigan, Ilocos Sur",
+      "price": "₱7,800",
+      "rating": 4.9,
+      "reviews": 103,
+      "image": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80",
       "perDay": true
     }
   ],
   "discountedRentals": [
     {
-      "id": 5,
+      "id": 11,
       "name": "Sunset Cliff House",
       "location": "Corong-Corong, El Nido",
       "price": "₱5,000",
@@ -57,7 +117,7 @@
       "perDay": true
     },
     {
-      "id": 6,
+      "id": 12,
       "name": "Heritage Cottage",
       "location": "Parian, Cebu City",
       "price": "₱1,800",
@@ -67,11 +127,47 @@
       "reviews": 89,
       "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "perDay": true
+    },
+    {
+      "id": 13,
+      "name": "Seaside Bungalow",
+      "location": "San Juan, La Union",
+      "price": "₱3,200",
+      "originalPrice": "₱4,000",
+      "discount": "20% off",
+      "rating": 4.6,
+      "reviews": 76,
+      "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 14,
+      "name": "Mountain Cabin",
+      "location": "Baguio City",
+      "price": "₱2,400",
+      "originalPrice": "₱3,000",
+      "discount": "20% off",
+      "rating": 4.5,
+      "reviews": 62,
+      "image": "https://images.unsplash.com/photo-1542718610-a1d656d1884c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
+    },
+    {
+      "id": 15,
+      "name": "City View Apartment",
+      "location": "Eastwood, Quezon City",
+      "price": "₱2,800",
+      "originalPrice": "₱3,500",
+      "discount": "20% off",
+      "rating": 4.7,
+      "reviews": 94,
+      "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "perDay": true
     }
   ],
   "travelItineraries": [
     {
-      "id": 7,
+      "id": 16,
       "name": "Boracay Escape: 3 Days of Sun, Sand, and Adventure",
       "description": "Discover the best of Boracay in three unforgettable days! This itinerary covers the iconic White Beach, thrilling island hopping, and vibrant nightlife.",
       "priceRange": "₱3,500-₱10,000",
@@ -79,7 +175,7 @@
       "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
     },
     {
-      "id": 8,
+      "id": 17,
       "name": "Palawan Island Hopping Adventure",
       "description": "Explore the hidden lagoons and pristine beaches of Palawan with this comprehensive island hopping guide.",
       "priceRange": "₱4,500-₱12,000",
@@ -103,7 +199,9 @@
       "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1560185008-a33f5c7b1844?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      "https://images.unsplash.com/photo-1560185008-a33f5c7b1844?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80"
     ],
     "amenities": {
       "home": ["Air condition", "Pet friendly", "Kitchen", "TV", "Garage", "Pool", "Free WiFi", "Washer"],
@@ -145,21 +243,22 @@
     ]
   },
   "itineraryDetails": {
-    "id": 7,
-    "name": "Boracay Escape: 2 Days of Sun, Sand, and Adventure",
+    "id": 16,
+    "name": "Boracay Escape: 3 Days of Sun, Sand, and Adventure",
     "description": "Discover the best of Boracay in three unforgettable days! This itinerary covers the iconic White Beach, thrilling island hopping, and vibrant nightlife. Whether you're a beach lover, adventure seeker, or foodie, this guide has everything you need for the ultimate Boracay experience.",
     "images": [
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     ],
     "packages": [
       {
+        "id": 101,
         "name": "Budget Escape",
         "price": "₱3,500",
         "perHead": true,
-        "duration": "2 days, 1 night",
+        "duration": "3 days, 2 nights",
         "description": "Affordable adventure with island hopping, beach sunsets, and local eats—perfect for budget travelers!",
         "schedule": [
           {
@@ -181,27 +280,151 @@
               { "time": "9:00 AM", "activity": "Beach activities (swimming, sunbathing)" },
               { "time": "12:00 PM", "activity": "Lunch at D'Talipapa market - pick your seafood" },
               { "time": "2:00 PM", "activity": "Souvenir shopping at D'Mall" },
-              { "time": "4:00 PM", "activity": "Departure from Boracay" }
+              { "time": "4:00 PM", "activity": "Watch sunset at Diniwid Beach" },
+              { "time": "7:00 PM", "activity": "Dinner at budget-friendly restaurant" }
+            ]
+          },
+          {
+            "day": 3,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Breakfast at hostel" },
+              { "time": "9:00 AM", "activity": "Last-minute beach time" },
+              { "time": "11:00 AM", "activity": "Check-out from accommodation" },
+              { "time": "12:00 PM", "activity": "Lunch at local eatery" },
+              { "time": "2:00 PM", "activity": "Departure from Boracay" }
             ]
           }
         ],
         "inclusions": ["Budget accommodation", "boat transfer", "DIY island hopping"],
-        "exclusions": ["Other activities", "personal expenses"]
+        "exclusions": ["Other activities", "personal expenses"],
+        "images": [
+          "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+          "https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        ]
       },
       {
+        "id": 102,
         "name": "Classic Adventure",
         "price": "₱7,500",
         "perHead": true,
-        "duration": "2 days, 1 night",
-        "description": "A balanced getaway with guided tours, beachfront dining, and fun water activities for a hassle-free trip!"
+        "duration": "3 days, 2 nights",
+        "description": "A balanced getaway with guided tours, beachfront dining, and fun water activities for a hassle-free trip!",
+        "schedule": [
+          {
+            "day": 1,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Arrival at Caticlan Jetty Port & private transfer to Boracay" },
+              { "time": "9:00 AM", "activity": "Check-in at mid-range hotel (e.g., Astoria Boracay, Station 1)" },
+              {
+                "time": "10:30 AM",
+                "activity": "Guided Island Hopping Tour (Puka Beach, Crystal Cove, Crocodile Island)"
+              },
+              { "time": "12:30 PM", "activity": "Seafood lunch during island hopping" },
+              { "time": "4:00 PM", "activity": "Return to hotel and freshen up" },
+              { "time": "6:00 PM", "activity": "Sunset sailing experience" },
+              { "time": "8:00 PM", "activity": "Dinner at beachfront restaurant" }
+            ]
+          },
+          {
+            "day": 2,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Breakfast at hotel" },
+              { "time": "9:30 AM", "activity": "Water activities (parasailing, banana boat, jet ski)" },
+              { "time": "12:30 PM", "activity": "Lunch at D'Mall area" },
+              { "time": "2:00 PM", "activity": "ATV adventure to Mt. Luho viewpoint" },
+              { "time": "5:00 PM", "activity": "Relax at White Beach" },
+              { "time": "7:00 PM", "activity": "Fire dance show and dinner" }
+            ]
+          },
+          {
+            "day": 3,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Breakfast at hotel" },
+              { "time": "9:30 AM", "activity": "Spa treatment" },
+              { "time": "12:00 PM", "activity": "Check-out and lunch" },
+              { "time": "2:00 PM", "activity": "Departure from Boracay" }
+            ]
+          }
+        ],
+        "inclusions": [
+          "Mid-range accommodation",
+          "private transfers",
+          "guided island hopping",
+          "sunset sailing",
+          "selected water activities"
+        ],
+        "exclusions": ["Additional activities", "personal expenses", "travel insurance"],
+        "images": [
+          "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        ]
       },
       {
+        "id": 103,
         "name": "Luxurious Getaway",
         "price": "₱10,000",
         "perHead": true,
-        "duration": "2 days, 1 night",
-        "description": "Indulge in VIP experiences with private yacht tours, 5-star resorts, and fine dining by the beach!"
+        "duration": "3 days, 2 nights",
+        "description": "Indulge in VIP experiences with private yacht tours, 5-star resorts, and fine dining by the beach!",
+        "schedule": [
+          {
+            "day": 1,
+            "activities": [
+              { "time": "8:00 AM", "activity": "VIP arrival at Caticlan Airport with fast-track service" },
+              { "time": "9:00 AM", "activity": "Private speedboat transfer to Boracay" },
+              { "time": "10:00 AM", "activity": "Check-in at luxury resort (e.g., Shangri-La Boracay)" },
+              { "time": "12:00 PM", "activity": "Welcome lunch at resort's beachfront restaurant" },
+              { "time": "2:00 PM", "activity": "Private yacht tour with champagne and snacks" },
+              { "time": "6:00 PM", "activity": "Sunset cocktails at resort's cliff bar" },
+              { "time": "8:00 PM", "activity": "Fine dining experience with personal chef" }
+            ]
+          },
+          {
+            "day": 2,
+            "activities": [
+              { "time": "8:00 AM", "activity": "Breakfast in bed or at private cabana" },
+              { "time": "10:00 AM", "activity": "Private snorkeling tour with marine biologist" },
+              { "time": "1:00 PM", "activity": "Gourmet picnic lunch on secluded beach" },
+              { "time": "3:00 PM", "activity": "Couple's spa treatment" },
+              { "time": "6:00 PM", "activity": "Private beach dinner with personal butler" },
+              { "time": "8:30 PM", "activity": "Exclusive fire dance performance" }
+            ]
+          },
+          {
+            "day": 3,
+            "activities": [
+              { "time": "9:00 AM", "activity": "Breakfast at resort" },
+              { "time": "10:30 AM", "activity": "Helicopter island tour" },
+              { "time": "12:30 PM", "activity": "Farewell lunch" },
+              { "time": "2:00 PM", "activity": "Late check-out" },
+              { "time": "3:00 PM", "activity": "Private transfer to airport" }
+            ]
+          }
+        ],
+        "inclusions": [
+          "Luxury accommodation",
+          "VIP transfers",
+          "private yacht tour",
+          "exclusive dining experiences",
+          "couple's spa",
+          "helicopter tour"
+        ],
+        "exclusions": ["Personal expenses", "additional activities"],
+        "images": [
+          "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        ]
       }
     ]
+  },
+  "landingPageImages": {
+    "hero": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "appScreenshots": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    ],
+    "mission": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "vision": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   }
 }

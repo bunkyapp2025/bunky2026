@@ -1,6 +1,9 @@
 import Image from "next/image"
+import contentData from "@/data/content.json"
 
 export function MissionVision() {
+  const images = contentData.landingPageImages || {}
+
   return (
     <section id="about" className="bg-gray-50 py-16 md:py-24">
       <div className="container px-4 md:px-6">
@@ -31,14 +34,19 @@ export function MissionVision() {
           </div>
           <div className="relative h-[300px] lg:h-auto rounded-xl overflow-hidden">
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src={images.mission || "/placeholder.svg?height=600&width=800"}
               alt="Travelers experiencing local culture"
               fill
               className="object-cover"
             />
           </div>
           <div className="relative h-[300px] lg:h-auto rounded-xl overflow-hidden">
-            <Image src="/placeholder.svg?height=600&width=800" alt="Future of travel" fill className="object-cover" />
+            <Image
+              src={images.vision || "/placeholder.svg?height=600&width=800"}
+              alt="Future of travel"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="space-y-4">
             <div className="inline-block rounded-lg bg-[#FC81A0]/10 px-3 py-1 text-sm text-[#FC81A0]">Our Vision</div>

@@ -16,6 +16,7 @@ import { HostPartnerCTA } from "@/components/host-partner-cta"
 import { AdSection } from "@/components/ad-section"
 import { AppDownloadBanner } from "@/components/app-download-banner"
 import { Star, MapPin, TrendingUp } from "lucide-react"
+import contentData from "@/data/content.json"
 
 export default function Home() {
   // Function to handle smooth scrolling to sections
@@ -25,6 +26,8 @@ export default function Home() {
       section.scrollIntoView({ behavior: "smooth" })
     }
   }
+
+  const heroImage = contentData.landingPageImages?.hero || "/placeholder.svg?height=550&width=500"
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -105,7 +108,7 @@ export default function Home() {
                   {/* Main Image */}
                   <div className="relative h-[350px] w-[300px] sm:h-[450px] sm:w-[400px] lg:h-[550px] lg:w-[500px] rounded-2xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.02]">
                     <Image
-                      src="/placeholder.svg?height=550&width=500"
+                      src={heroImage || "/placeholder.svg"}
                       alt="Bunky App Hero"
                       fill
                       className="object-cover"

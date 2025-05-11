@@ -7,7 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Star, MapPin } from "lucide-react"
+import { Star, MapPin, ChevronRight } from "lucide-react"
 import { QRCodeCard } from "@/components/qr-code-card"
 import contentData from "@/data/content.json"
 
@@ -24,7 +24,7 @@ export default function BookNow() {
   // Render a rental card
   const RentalCard = ({ rental, discounted = false }) => (
     <div
-      className="relative rounded-lg overflow-hidden shadow-md bg-white cursor-pointer"
+      className="relative rounded-lg overflow-hidden shadow-md bg-white cursor-pointer min-w-[280px] max-w-[280px] flex-shrink-0"
       onClick={() => router.push(`/property/${rental.id}`)}
     >
       <div className="relative h-48 w-full">
@@ -103,8 +103,8 @@ export default function BookNow() {
   const SectionHeader = ({ title }) => (
     <div className="flex justify-between items-center mb-4">
       <h2 className="text-xl font-bold">{title}</h2>
-      <button className="text-[#FC81A0] text-sm" onClick={() => setShowDownloadModal(true)}>
-        See all
+      <button className="text-[#FC81A0] text-sm flex items-center" onClick={() => setShowDownloadModal(true)}>
+        See all <ChevronRight className="h-4 w-4 ml-1" />
       </button>
     </div>
   )
@@ -113,41 +113,11 @@ export default function BookNow() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1 bg-gray-50">
-        {/* Property Type Tabs */}
-        <div className="sticky top-16 z-10 bg-white border-b p-4">
-          <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
-            <Button
-              variant="outline"
-              className="rounded-full bg-[#FC81A0] text-white border-[#FC81A0] hover:bg-[#e06d8a] hover:text-white"
-            >
-              <span className="mr-1">🏠</span> Transient
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-gray-300 hover:border-[#FC81A0] hover:text-[#FC81A0]"
-            >
-              <span className="mr-1">🏢</span> Condo
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-gray-300 hover:border-[#FC81A0] hover:text-[#FC81A0]"
-            >
-              <span className="mr-1">🛏️</span> Bed Space
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full border-gray-300 hover:border-[#FC81A0] hover:text-[#FC81A0]"
-            >
-              <span className="mr-1">🏨</span> Hotel
-            </Button>
-          </div>
-        </div>
-
         <div className="container px-4 py-6">
           {/* Featured Rentals */}
           <section className="mb-8">
             <SectionHeader title="Featured Rentals" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="flex overflow-x-auto gap-4 pb-4 -mx-4 px-4 scrollbar-hide">
               {featuredRentals.map((rental) => (
                 <RentalCard key={rental.id} rental={rental} />
               ))}
@@ -157,7 +127,7 @@ export default function BookNow() {
           {/* Top Rated Rentals */}
           <section className="mb-8">
             <SectionHeader title="Top Rated Rentals" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="flex overflow-x-auto gap-4 pb-4 -mx-4 px-4 scrollbar-hide">
               {topRatedRentals.map((rental) => (
                 <RentalCard key={rental.id} rental={rental} />
               ))}
@@ -167,7 +137,7 @@ export default function BookNow() {
           {/* Discounted Rentals */}
           <section className="mb-8">
             <SectionHeader title="Discounted Rentals" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="flex overflow-x-auto gap-4 pb-4 -mx-4 px-4 scrollbar-hide">
               {discountedRentals.map((rental) => (
                 <RentalCard key={rental.id} rental={rental} discounted={true} />
               ))}
