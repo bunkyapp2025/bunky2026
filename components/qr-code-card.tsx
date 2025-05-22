@@ -13,7 +13,7 @@ interface QRCodeCardProps {
 
 export function QRCodeCard({ storeName, storeLabel, storeUrl, size = "medium" }: QRCodeCardProps) {
   // Get QR code image based on store name
-  const qrCodeImage = storeName === "Google Play" ? contentData.qrCodes.googlePlay : contentData.qrCodes.appStore
+  const qrCodeImage = storeName.includes("Google Play") ? contentData.qrCodes.googlePlay : contentData.qrCodes.appStore
 
   return (
     <Link href={storeUrl} target="_blank">

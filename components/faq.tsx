@@ -18,10 +18,16 @@ export function FAQ() {
           <Tabs defaultValue="guests" className="w-full">
             <div className="flex justify-center mb-8">
               <TabsList className="bg-[#FC81A0]/10">
-                <TabsTrigger value="guests" className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white">
+                <TabsTrigger
+                  value="guests"
+                  className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white transition-colors"
+                >
                   For Guests
                 </TabsTrigger>
-                <TabsTrigger value="hosts" className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white">
+                <TabsTrigger
+                  value="hosts"
+                  className="data-[state=active]:bg-[#FC81A0] data-[state=active]:text-white transition-colors"
+                >
                   For Hosts
                 </TabsTrigger>
               </TabsList>
@@ -30,7 +36,9 @@ export function FAQ() {
               <Accordion type="single" collapsible className="w-full">
                 {guestFAQs.map((faq, i) => (
                   <AccordionItem key={i} value={`guest-item-${i}`}>
-                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionTrigger className="text-left hover:text-[#FC81A0] transition-colors">
+                      {faq.question}
+                    </AccordionTrigger>
                     <AccordionContent className="text-gray-500">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
@@ -40,7 +48,9 @@ export function FAQ() {
               <Accordion type="single" collapsible className="w-full">
                 {hostFAQs.map((faq, i) => (
                   <AccordionItem key={i} value={`host-item-${i}`}>
-                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionTrigger className="text-left hover:text-[#FC81A0] transition-colors">
+                      {faq.question}
+                    </AccordionTrigger>
                     <AccordionContent className="text-gray-500">{faq.answer}</AccordionContent>
                   </AccordionItem>
                 ))}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { X, Smartphone } from "lucide-react"
@@ -8,10 +8,8 @@ import { Button } from "@/components/ui/button"
 
 export function AppDownloadBanner() {
   const [dismissed, setDismissed] = useState(false)
-
-  if (dismissed) {
-    return null
-  }
+  const [showOptions, setShowOptions] = useState(false)
+  const optionsRef = useRef<HTMLDivElement | null>(null)
 
   const detectMobileDevice = () => {
     if (typeof window !== "undefined") {
@@ -22,9 +20,32 @@ export function AppDownloadBanner() {
         window.location.href = "https://apps.apple.com"
       } else {
         // If not on mobile, show both options
-        document.getElementById("download-options")?.classList.remove("hidden")
+        setShowOptions(true)
       }
     }
+  }
+
+  // Close QR code options on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (optionsRef.current && !optionsRef.current.contains(event.target as Node)) {
+        setShowOptions(false)
+      }
+    }
+
+    if (showOptions) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showOptions])
+
+  if (dismissed) {
+    return null
   }
 
   return (
@@ -35,38 +56,45 @@ export function AppDownloadBanner() {
           <p className="text-sm font-medium">Get the Bunky app for the best experience!</p>
         </div>
 
-        <div className="flex items-center space-x-2">
-          <Button variant="ghost" size="sm" className="text-gray-500 hover:bg-[#FC81A0]/10 hover:border hover:border-[#FC81A0]" onClick={detectMobileDevice}>
+        <div className="relative flex items-center space-x-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-gray-500 hover:bg-[#FC81A0]/10 hover:border hover:border-[#FC81A0]"
+            onClick={detectMobileDevice}
+          >
             Download Now
           </Button>
 
-          <div
-            id="download-options"
-            className="hidden absolute top-full right-4 mt-2 bg-white rounded-lg shadow-lg p-4 z-50"
-          >
-            <div className="grid grid-cols-2 gap-4">
-              <Link href="https://play.google.com/store" target="_blank" className="flex flex-col items-center">
-                <Image
-                  src="/placeholder.svg?height=100&width=100"
-                  alt="Google Play QR Code"
-                  width={100}
-                  height={100}
-                  className="rounded-lg mb-2"
-                />
-                <span className="text-xs text-gray-700">Google Play</span>
-              </Link>
-              <Link href="https://apps.apple.com" target="_blank" className="flex flex-col items-center">
-                <Image
-                  src="/placeholder.svg?height=100&width=100"
-                  alt="App Store QR Code"
-                  width={100}
-                  height={100}
-                  className="rounded-lg mb-2"
-                />
-                <span className="text-xs text-gray-700">App Store</span>
-              </Link>
+          {showOptions && (
+            <div
+              ref={optionsRef}
+              className="absolute top-full right-4 mt-2 bg-white rounded-lg shadow-lg p-4 z-50 w-[240px]"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <Link href="https://play.google.com/store" target="_blank" className="flex flex-col items-center">
+                  <Image
+                    src="/images/google-play-qr.png"
+                    alt="Google Play QR Code"
+                    width={100}
+                    height={100}
+                    className="rounded-lg mb-2"
+                  />
+                  <span className="text-xs text-gray-700">Google Play</span>
+                </Link>
+                <Link href="https://apps.apple.com" target="_blank" className="flex flex-col items-center">
+                  <Image
+                    src="/images/app-store-qr.png"
+                    alt="App Store QR Code"
+                    width={100}
+                    height={100}
+                    className="rounded-lg mb-2"
+                  />
+                  <span className="text-xs text-gray-700">App Store</span>
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
 
           <button
             className="rounded-full p-1 hover:text-black hover:bg-[#FC81A0]/10 hover:border hover:border-[#FC81A0]"

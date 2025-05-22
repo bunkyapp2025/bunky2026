@@ -20,7 +20,10 @@ export function Testimonials() {
         </div>
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, i) => (
-            <Card key={i} className="border-2 border-[#FC81A0]/10">
+            <Card
+              key={i}
+              className="border-2 border-[#FC81A0]/10 hover:border-[#FC81A0]/30 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
               <CardContent className="p-6">
                 <div className="flex mb-4">
                   {Array(5)
@@ -32,13 +35,15 @@ export function Testimonials() {
                 <p className="text-gray-500">{testimonial.content}</p>
               </CardContent>
               <CardFooter className="flex items-center gap-4 p-6 pt-0">
-                <Image
-                  src={testimonial.avatar || "/placeholder.svg"}
-                  alt={testimonial.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full object-cover h-10 w-10"
-                />
+                <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[#FC81A0]/20">
+                  <Image
+                    src={testimonial.avatar || "/placeholder.svg"}
+                    alt={testimonial.name}
+                    width={40}
+                    height={40}
+                    className="object-cover h-10 w-10"
+                  />
+                </div>
                 <div>
                   <p className="font-medium">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.location}</p>

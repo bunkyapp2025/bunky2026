@@ -17,6 +17,7 @@ import { AdSection } from "@/components/ad-section"
 import { AppDownloadBanner } from "@/components/app-download-banner"
 import { Star, MapPin, TrendingUp } from "lucide-react"
 import contentData from "@/data/content.json"
+import { HeroCTA } from "@/components/hero-cta"
 
 export default function Home() {
   // Function to handle smooth scrolling to sections
@@ -202,6 +203,7 @@ export default function Home() {
         <AdSection />
       </main>
       <Footer />
+      <HeroCTA />
     </div>
   )
 }

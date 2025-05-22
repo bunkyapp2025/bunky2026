@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -38,9 +39,11 @@ export default function SpecialOffer() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-[#FC81A0] hover:bg-[#e06d8a]">
-                    Book Now
-                  </Button>
+                  <Link href="/book-now">
+                    <Button size="lg" className="bg-[#FC81A0] hover:bg-[#e06d8a]">
+                      Book Now
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -122,6 +125,12 @@ export default function SpecialOffer() {
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+
+              <div className="flex justify-center">
+                <Link href="/book-now">
+                  <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]">Browse Tour Packages</Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,10 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import contentData from "@/data/content.json"
 
 export function AppScreenshots() {
-  const images = contentData.landingPageImages?.appScreenshots || []
+  const images = [
+    "/images/app-screenshot-discover.png",
+    "/images/app-screenshot-book.png",
+    "/images/app-screenshot-experience.png",
+  ]
 
   return (
     <section id="app" className="bg-white py-16 md:py-24">
@@ -41,19 +44,23 @@ export function AppScreenshots() {
             </div>
             <TabsContent value="discover" className="mt-0">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
-                  <Image
-                    src={images[0] || "/placeholder.svg?height=600&width=300"}
-                    alt="Bunky App Discover Screen"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-[250px] md:w-[300px] h-[500px] md:h-[600px] shadow-xl rounded-3xl border-8 border-gray-800 overflow-hidden">
+                  <div className="h-full overflow-y-auto scrollbar-hide">
+                    <Image
+                      src={images[0] || "/placeholder.svg"}
+                      alt="Bunky App Discover Screen"
+                      width={284}
+                      height={1200}
+                      className="w-full object-top"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="max-w-md space-y-4 text-center md:text-left">
                   <h3 className="text-2xl font-bold">Discover Amazing Tours</h3>
                   <p className="text-gray-500">
-                    Browse through thousands of curated rentals and tour packages, filter by destination, price, or
-                    activities, and find your perfect adventure.
+                    Browse through featured rentals, top-rated properties, and discounted stays. Find travel itineraries
+                    tailored to your preferences and explore exciting destinations.
                   </p>
                   <ul className="space-y-2 text-gray-500">
                     <li className="flex items-center gap-2 justify-center md:justify-start">
@@ -72,7 +79,7 @@ export function AppScreenshots() {
 
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div className="flex flex-row gap-4 justify-center md:justify-start">
                       <Link href="https://play.google.com/store" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
@@ -80,7 +87,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/google-play-qr.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}
@@ -101,7 +108,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/app-store-qr.png"
                               alt="App Store QR Code"
                               width={50}
                               height={50}
@@ -121,19 +128,22 @@ export function AppScreenshots() {
             </TabsContent>
             <TabsContent value="book" className="mt-0">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
-                  <Image
-                    src={images[1] || "/placeholder.svg?height=600&width=300"}
-                    alt="Bunky App Booking Screen"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-[250px] md:w-[300px] h-[500px] md:h-[600px] shadow-xl rounded-3xl border-8 border-gray-800 overflow-hidden">
+                  <div className="h-full overflow-y-auto scrollbar-hide">
+                    <Image
+                      src={images[1] || "/placeholder.svg"}
+                      alt="Bunky App Booking Screen"
+                      width={284}
+                      height={1200}
+                      className="w-full object-top"
+                    />
+                  </div>
                 </div>
                 <div className="max-w-md space-y-4 text-center md:text-left">
-                  <h3 className="text-2xl font-bold">Seamless Booking Process</h3>
+                  <h3 className="text-2xl font-bold">Detailed Property Information</h3>
                   <p className="text-gray-500">
-                    Book your entire trip in minutes with our intuitive booking process. Secure accommodations,
-                    activities, and transportation all in one place.
+                    View comprehensive property details including amenities, location maps, and authentic guest reviews.
+                    Get all the information you need to make the perfect choice for your stay.
                   </p>
                   <ul className="space-y-2 text-gray-500">
                     <li className="flex items-center gap-2 justify-center md:justify-start">
@@ -152,7 +162,7 @@ export function AppScreenshots() {
 
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div className="flex flex-row gap-4 justify-center md:justify-start">
                       <Link href="https://play.google.com/store" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
@@ -160,7 +170,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/google-play-qr.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}
@@ -181,7 +191,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/app-store-qr.png"
                               alt="App Store QR Code"
                               width={50}
                               height={50}
@@ -201,19 +211,22 @@ export function AppScreenshots() {
             </TabsContent>
             <TabsContent value="experience" className="mt-0">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="relative h-[500px] w-[250px] md:h-[600px] md:w-[300px] shadow-xl rounded-3xl overflow-hidden border-8 border-gray-800">
-                  <Image
-                    src={images[2] || "/placeholder.svg?height=600&width=300"}
-                    alt="Bunky App Experience Screen"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-[250px] md:w-[300px] h-[500px] md:h-[600px] shadow-xl rounded-3xl border-8 border-gray-800 overflow-hidden">
+                  <div className="h-full overflow-y-auto scrollbar-hide">
+                    <Image
+                      src={images[2] || "/placeholder.svg"}
+                      alt="Bunky App Experience Screen"
+                      width={284}
+                      height={1200}
+                      className="w-full object-top"
+                    />
+                  </div>
                 </div>
                 <div className="max-w-md space-y-4 text-center md:text-left">
-                  <h3 className="text-2xl font-bold">Enhance Your Experience</h3>
+                  <h3 className="text-2xl font-bold">Explore Tour Packages</h3>
                   <p className="text-gray-500">
-                    Access all your booking details, connect with local guides, and discover insider tips to make the
-                    most of your adventure.
+                    Choose from a variety of tour packages at different price points, from budget-friendly options to
+                    luxurious getaways. Each package is carefully curated to provide an unforgettable experience.
                   </p>
                   <ul className="space-y-2 text-gray-500">
                     <li className="flex items-center gap-2 justify-center md:justify-start">
@@ -232,7 +245,7 @@ export function AppScreenshots() {
 
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div className="flex flex-row gap-4 justify-center md:justify-start">
                       <Link href="https://play.google.com/store" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
@@ -240,7 +253,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/google-play-qr.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}
@@ -261,7 +274,7 @@ export function AppScreenshots() {
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/placeholder.svg?height=48&width=48"
+                              src="/images/app-store-qr.png"
                               alt="App Store QR Code"
                               width={50}
                               height={50}

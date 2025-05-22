@@ -8,8 +8,28 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { DownloadAppModal } from "@/components/download-app-modal"
 import { ArrowLeft, Calendar, Clock, Check, X } from "lucide-react"
 import contentData from "@/data/content.json"
+
+const QRCodeCard = ({ storeName, storeLabel, storeUrl }) => {
+  return (
+    <Link href={storeUrl} target="_blank" rel="noopener noreferrer">
+      <div className="flex flex-col items-center border rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
+        <div className="h-16 w-16 relative">
+          <Image
+            src={`/images/${storeName.toLowerCase().replace(" ", "-")}-qr.png`}
+            alt={`${storeName} QR Code`}
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+        <p className="text-xs text-gray-500 mt-2">{storeLabel}</p>
+        <p className="font-semibold text-sm">{storeName}</p>
+      </div>
+    </Link>
+  )
+}
 
 export default function PackageDetails({ params }) {
   const [showDownloadModal, setShowDownloadModal] = useState(false)
@@ -51,7 +71,7 @@ export default function PackageDetails({ params }) {
           <p className="text-gray-600 text-sm mt-2">{packageData.description}</p>
 
           {/* Price */}
-          <div className="mt-4 bg-gray-50 p-4 rounded-lg">
+          <div className="mt-4 bg-gray-50 p-4 rounded-lg mb-8">
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-gray-500">Price per person</p>
@@ -64,37 +84,35 @@ export default function PackageDetails({ params }) {
           </div>
 
           {/* Day by Day Itinerary */}
-          <div className="mt-8">
-            <h2 className="text-xl font-bold mb-4">Day by Day Itinerary</h2>
-            <div className="space-y-6">
-              {packageData.schedule.map((day, index) => (
-                <div key={index} className="relative">
-                  <div className="flex items-start">
-                    <div className="relative flex flex-col items-center">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FC81A0] text-white">
-                        {day.day}
-                      </div>
-                      {/* Line connecting dots - now centered and stops at the last item */}
-                      {index < packageData.schedule.length - 1 && (
-                        <div className="absolute top-8 bottom-0 left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200"></div>
-                      )}
-                    </div>
-                    <div className="ml-4 flex-1">
-                      <h3 className="font-bold">Day {day.day}</h3>
-                      <div className="mt-2 space-y-3">
-                        {day.activities.map((activity, actIndex) => (
-                          <div key={actIndex} className="flex items-start">
-                            <div className="min-w-[60px] text-xs text-gray-500">{activity.time}</div>
-                            <div className="ml-2 text-sm">{activity.activity}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+          {packageData.schedule.map((day, index) => (
+            <div key={index} className="flex">
+              {/* Timeline Column */}
+              <div className="flex flex-col items-center mr-4 relative">
+                {/* Dot */}
+                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#FC81A0] text-white">
+                  {day.day}
                 </div>
-              ))}
+
+                {/* Vertical Line */}
+                {index < packageData.schedule.length - 1 && (
+                  <div className="absolute top-8 w-0.5 bg-gray-200 h-full"></div>
+                )}
+              </div>
+
+              {/* Content Column */}
+              <div className="flex-1 pb-8"> {/* optional pb here for content spacing */}
+                <h3 className="font-bold">Day {day.day}</h3>
+                <div className="mt-2 space-y-3">
+                  {day.activities.map((activity, actIndex) => (
+                    <div key={actIndex} className="flex items-start">
+                      <div className="min-w-[60px] text-xs text-gray-500">{activity.time}</div>
+                      <div className="ml-2 text-sm">{activity.activity}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
 
           {/* Inclusions & Exclusions */}
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -157,77 +175,7 @@ export default function PackageDetails({ params }) {
       </main>
 
       {/* Download App Modal */}
-      <Dialog open={showDownloadModal} onOpenChange={setShowDownloadModal}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-center text-xl">Complete Your Booking on the App</DialogTitle>
-            <DialogDescription className="text-center">
-              Download the Bunky app for the best booking experience and exclusive mobile-only deals!
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col items-center space-y-4 py-4">
-            <div className="relative h-[200px] w-[300px] rounded-lg overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                alt="Bunky App Screenshot"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* QR Code Download Section */}
-            <div className="mt-8 pt-6 border-t border-gray-200 w-full">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="https://play.google.com/store" target="_blank">
-                  <div
-                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
-                    title="Scan or tap to download"
-                  >
-                    <div className="relative h-12 w-12 flex-shrink-0">
-                      <Image
-                        src={contentData.qrCodes.googlePlay || "/placeholder.svg"}
-                        alt="Google Play QR Code"
-                        width={50}
-                        height={50}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex flex-col text-gray-500">
-                      <span className="text-xs">GET IT ON</span>
-                      <span className="font-bold text-sm">Google Play</span>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link href="https://apps.apple.com" target="_blank">
-                  <div
-                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
-                    title="Scan or tap to download"
-                  >
-                    <div className="relative h-12 w-12 flex-shrink-0">
-                      <Image
-                        src={contentData.qrCodes.appStore || "/placeholder.svg"}
-                        alt="App Store QR Code"
-                        width={50}
-                        height={50}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex flex-col text-gray-500">
-                      <span className="text-xs">DOWNLOAD ON</span>
-                      <span className="font-bold text-sm">App Store</span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            <p className="text-sm text-gray-500 text-center mt-4">
-              Continue your booking process seamlessly on our mobile app with more features and exclusive discounts.
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <DownloadAppModal isOpen={showDownloadModal} onOpenChange={setShowDownloadModal} />
 
       <Footer />
     </div>

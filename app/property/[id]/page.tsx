@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Star, MapPin, ArrowLeft, Bed, Bath, Home, SquareUser, Check, ChevronLeft, ChevronRight } from "lucide-react"
 import { SimilarProperties } from "@/components/similar-properties"
+import { DownloadAppModal } from "@/components/download-app-modal"
 import contentData from "@/data/content.json"
 import { AvailabilityCalendar } from "@/components/availability-calendar"
 
@@ -178,6 +179,19 @@ export default function PropertyDetails({ params }) {
             </div>
           </div>
 
+          {/* Price */}
+          <div className="mt-4 bg-gray-50 p-4 rounded-lg mb-8">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="text-sm text-gray-500">Price per day</p>
+                <p className="text-xl font-bold text-[#FC81A0]">{property.price}</p>
+              </div>
+              <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]" onClick={() => setShowDownloadModal(true)}>
+                Book Now
+              </Button>
+            </div>
+          </div>
+
           {/* Home Amenities */}
           <div className="mt-6">
             <h2 className="text-lg font-bold mb-3">Home amenities</h2>
@@ -192,7 +206,7 @@ export default function PropertyDetails({ params }) {
           </div>
 
           {/* Other Amenities (Collapsible) */}
-          <div className="mt-4">
+          <div className="mt-4 bg-gray-100 border border-gray-300 rounded-lg px-4 py-2">
             <details className="group">
               <summary className="flex items-center cursor-pointer">
                 <span className="text-lg font-bold">Other amenities</span>
@@ -258,12 +272,21 @@ export default function PropertyDetails({ params }) {
           {/* Availability Calendar */}
           <AvailabilityCalendar />
 
+          {/* Call to Action */}
+          <div className="mt-8 bg-[#FC81A0]/10 p-6 rounded-lg text-center">
+            <h3 className="text-lg font-bold mb-2">Ready to Experience {property.name}?</h3>
+            <p className="text-sm text-gray-600 mb-4">Book now to secure your spot on this amazing adventure!</p>
+            <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]" onClick={() => setShowDownloadModal(true)}>
+              Book This Property
+            </Button>
+          </div>
+
           {/* Similar Properties */}
           <SimilarProperties currentPropertyId={id} />
         </div>
 
         {/* Price and Book Now */}
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between">
+        {/* <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between">
           <div>
             <span className="font-bold text-xl">{property.price}</span>
             <span className="text-gray-500 text-sm ml-1">{property.perDay ? "/day" : ""}</span>
@@ -271,81 +294,11 @@ export default function PropertyDetails({ params }) {
           <Button className="bg-[#FC81A0] hover:bg-[#e06d8a]" onClick={() => setShowDownloadModal(true)}>
             Book Now
           </Button>
-        </div>
+        </div> */}
       </main>
 
       {/* Download App Modal */}
-      <Dialog open={showDownloadModal} onOpenChange={setShowDownloadModal}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-center text-xl">Complete Your Booking on the App</DialogTitle>
-            <DialogDescription className="text-center">
-              Download the Bunky app for the best booking experience and exclusive mobile-only deals!
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col items-center space-y-4 py-4">
-            <div className="relative h-[200px] w-[300px] rounded-lg overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                alt="Bunky App Screenshot"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* QR Code Download Section */}
-            <div className="mt-8 pt-6 border-t border-gray-200 w-full">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="https://play.google.com/store" target="_blank">
-                  <div
-                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
-                    title="Scan or tap to download"
-                  >
-                    <div className="relative h-12 w-12 flex-shrink-0">
-                      <Image
-                        src={contentData.qrCodes.googlePlay || "/placeholder.svg"}
-                        alt="Google Play QR Code"
-                        width={50}
-                        height={50}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex flex-col text-gray-500">
-                      <span className="text-xs">GET IT ON</span>
-                      <span className="font-bold text-sm">Google Play</span>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link href="https://apps.apple.com" target="_blank">
-                  <div
-                    className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
-                    title="Scan or tap to download"
-                  >
-                    <div className="relative h-12 w-12 flex-shrink-0">
-                      <Image
-                        src={contentData.qrCodes.appStore || "/placeholder.svg"}
-                        alt="App Store QR Code"
-                        width={50}
-                        height={50}
-                        className="rounded-md"
-                      />
-                    </div>
-                    <div className="flex flex-col text-gray-500">
-                      <span className="text-xs">DOWNLOAD ON</span>
-                      <span className="font-bold text-sm">App Store</span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            <p className="text-sm text-gray-500 text-center mt-4">
-              Continue your booking process seamlessly on our mobile app with more features and exclusive discounts.
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <DownloadAppModal isOpen={showDownloadModal} onOpenChange={setShowDownloadModal} />
 
       <Footer />
     </div>

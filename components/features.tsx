@@ -70,7 +70,7 @@ export function Features() {
                 hoveredCard === index
                   ? "border-[#FC81A0] shadow-lg transform scale-105 bg-[#FC81A0]/5"
                   : "border-[#FC81A0]/10 shadow-md"
-              } transition-all duration-300 cursor-pointer`}
+              } transition-all duration-300 cursor-pointer h-full flex flex-col`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -82,18 +82,8 @@ export function Features() {
                 <CardTitle className="text-xl">{feature.title}</CardTitle>
                 <CardDescription>{feature.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-sm text-gray-500">{feature.content}</p>
-                {hoveredCard === index && (
-                  <div className="mt-4 flex justify-center">
-                    {/*<span className="inline-flex items-center text-sm font-medium text-[#FC81A0]">
-                      Learn more
-                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>*/}
-                  </div>
-                )}
               </CardContent>
             </Card>
           ))}

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { ArrowLeft, Calendar, ChevronLeft, ChevronRight } from "lucide-react"
 import { QRCodeCard } from "@/components/qr-code-card"
+import { DownloadAppModal } from "@/components/download-app-modal"
 import contentData from "@/data/content.json"
 
 export default function ItineraryDetails({ params }) {
@@ -135,38 +136,7 @@ export default function ItineraryDetails({ params }) {
       </main>
 
       {/* Download App Modal */}
-      <Dialog open={showDownloadModal} onOpenChange={setShowDownloadModal}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-center text-xl">Complete Your Booking on the App</DialogTitle>
-            <DialogDescription className="text-center">
-              Download the Bunky app for the best booking experience and exclusive mobile-only deals!
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col items-center space-y-4 py-4">
-            <div className="relative h-[200px] w-[300px] rounded-lg overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                alt="Bunky App Screenshot"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* QR Code Download Section */}
-            <div className="mt-8 pt-6 border-t border-gray-200 w-full">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <QRCodeCard storeName="Google Play" storeLabel="GET IT ON" storeUrl="https://play.google.com/store" />
-                <QRCodeCard storeName="App Store" storeLabel="DOWNLOAD ON" storeUrl="https://apps.apple.com" />
-              </div>
-            </div>
-
-            <p className="text-sm text-gray-500 text-center mt-4">
-              Continue your booking process seamlessly on our mobile app with more features and exclusive discounts.
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <DownloadAppModal isOpen={showDownloadModal} onOpenChange={setShowDownloadModal} />
 
       <Footer />
     </div>
