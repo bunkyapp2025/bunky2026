@@ -1,47 +1,42 @@
-"use client"
-
 import Image from "next/image"
-import Link from "next/link"
-import contentData from "@/data/content.json"
+import { Card, CardContent } from "@/components/ui/card"
 
-interface QRCodeCardProps {
+interface QrCodeCardProps {
+  title: string
+  qrImage: string
+  storeText: string
   storeName: string
-  storeLabel: string
-  storeUrl: string
-  size?: "small" | "medium" | "large"
+  storeIcon: string
 }
 
-export function QRCodeCard({ storeName, storeLabel, storeUrl, size = "medium" }: QRCodeCardProps) {
-  // Get QR code image based on store name
-  const qrCodeImage = storeName.includes("Google Play") ? contentData.qrCodes.googlePlay : contentData.qrCodes.appStore
-
-  // Get store logo based on store name
-  const storeLogo = storeName.includes("Google Play") ? "/images/google-play-logo.png" : "/images/app-store-logo.png"
-
+export function QrCodeCard({ title, qrImage, storeText, storeName, storeIcon }: QrCodeCardProps) {
   return (
-    <Link href={storeUrl} target="_blank">
-      <div
-        className="group relative bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow flex items-center space-x-3 max-w-[200px]"
-        title="Scan or tap to download"
-      >
-        <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden">
+    <Card className="w-full max-w-sm">
+      <CardContent className="p-6 text-center">
+        <h3 className="text-lg font-semibold mb-4">{title}</h3>
+        <div className="mb-4">
           <Image
-            src={qrCodeImage || "/placeholder.svg?height=48&width=48"}
-            alt={`${storeName} QR Code`}
-            fill
-            className="object-cover rounded-md"
+            src={qrImage || "/placeholder.svg"}
+            alt={`QR code for ${storeName}`}
+            width={150}
+            height={150}
+            className="mx-auto rounded-lg"
           />
         </div>
-        <div className="flex flex-col flex-1">
-          <div className="flex items-center space-x-2 mb-1">
-            <div className="relative h-4 w-4 flex-shrink-0">
-              <Image src={storeLogo || "/placeholder.svg"} alt={`${storeName} Logo`} fill className="object-contain" />
-            </div>
-            <span className="text-xs text-gray-500">{storeLabel}</span>
+        <div className="flex items-center justify-center space-x-2">
+          <Image
+            src={storeIcon || "/placeholder.svg"}
+            alt={`${storeName} logo`}
+            width={24}
+            height={24}
+            className="rounded"
+          />
+          <div className="text-sm">
+            <div className="text-gray-600">{storeText}</div>
+            <div className="font-semibold">{storeName}</div>
           </div>
-          <span className="font-bold text-sm">{storeName}</span>
         </div>
-      </div>
-    </Link>
+      </CardContent>
+    </Card>
   )
 }

@@ -95,7 +95,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">GET IT ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/google-play-logo.png"
+                                alt="Google Play"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">Google Play</span>
                           </div>
                         </div>
@@ -116,7 +125,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">DOWNLOAD ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/app-store-logo.png"
+                                alt="App Store"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">App Store</span>
                           </div>
                         </div>
@@ -178,7 +196,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">GET IT ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/google-play-logo.png"
+                                alt="Google Play"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">Google Play</span>
                           </div>
                         </div>
@@ -199,7 +226,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">DOWNLOAD ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/app-store-logo.png"
+                                alt="App Store"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">App Store</span>
                           </div>
                         </div>
@@ -261,7 +297,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">GET IT ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/google-play-logo.png"
+                                alt="Google Play"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">Google Play</span>
                           </div>
                         </div>
@@ -282,7 +327,16 @@ export function AppScreenshots() {
                             />
                           </div>
                           <div className="flex flex-col text-gray-500">
-                            <span className="text-xs">DOWNLOAD ON</span>
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src="/images/app-store-logo.png"
+                                alt="App Store"
+                                width={12}
+                                height={12}
+                                className="object-contain"
+                              />
+                              <span className="text-xs">GET IT ON</span>
+                            </div>
                             <span className="font-bold text-sm">App Store</span>
                           </div>
                         </div>

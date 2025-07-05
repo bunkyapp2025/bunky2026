@@ -1,45 +1,78 @@
 "use client"
 
 import Image from "next/image"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { QRCodeCard } from "@/components/qr-code-card"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { X } from "lucide-react"
 
 interface DownloadAppModalProps {
   isOpen: boolean
   onOpenChange: (open: boolean) => void
-  title?: string
-  description?: string
 }
 
-export function DownloadAppModal({
-  isOpen,
-  onOpenChange,
-  title = "Complete Your Booking on the App",
-  description = "Download the Bunky app for the best booking experience and exclusive mobile-only deals!",
-}: DownloadAppModalProps) {
+export function DownloadAppModal({ isOpen, onOpenChange }: DownloadAppModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-xl">{title}</DialogTitle>
-          <DialogDescription className="text-center">{description}</DialogDescription>
+          <DialogTitle className="text-center">Download Bunky App</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col items-center space-y-4 py-4">
-          <div className="relative h-[150px] w-[150px] flex items-center justify-center">
-            <Image src="/images/bunky-logo.png" alt="Bunky Logo" width={150} height={150} className="object-contain" />
-          </div>
+        <div className="flex flex-col items-center space-y-6 py-4">
+          <p className="text-center text-gray-600">Get the full Bunky experience on your mobile device</p>
 
-          {/* QR Code Download Section */}
-          <div className="mt-8 pt-6 border-t border-gray-200 w-full">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <QRCodeCard storeName="Google Play" storeLabel="GET IT ON" storeUrl="https://play.google.com/store" />
-              <QRCodeCard storeName="App Store" storeLabel="DOWNLOAD ON" storeUrl="https://apps.apple.com" />
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
+            <div className="flex-1 text-center">
+              <div className="mb-3">
+                <Image
+                  src="/images/app-store-qr.png"
+                  alt="App Store QR Code"
+                  width={120}
+                  height={120}
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <Image
+                  src="/images/app-store-logo.png"
+                  alt="App Store logo"
+                  width={20}
+                  height={20}
+                  className="rounded"
+                />
+                <div className="text-sm">
+                  <div className="text-gray-600">GET IT ON</div>
+                  <div className="font-semibold">App Store</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 text-center">
+              <div className="mb-3">
+                <Image
+                  src="/images/google-play-qr.png"
+                  alt="Google Play QR Code"
+                  width={120}
+                  height={120}
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <Image
+                  src="/images/google-play-logo.png"
+                  alt="Google Play logo"
+                  width={20}
+                  height={20}
+                  className="rounded"
+                />
+                <div className="text-sm">
+                  <div className="text-gray-600">GET IT ON</div>
+                  <div className="font-semibold">Google Play</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <p className="text-sm text-gray-500 text-center mt-4">
-            Continue your booking process seamlessly on our mobile app with more features and exclusive discounts.
-          </p>
+          <p className="text-xs text-gray-500 text-center">Scan the QR code with your phone camera to download</p>
         </div>
       </DialogContent>
     </Dialog>
