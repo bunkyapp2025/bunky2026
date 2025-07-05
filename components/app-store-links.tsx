@@ -43,22 +43,22 @@ export function AppStoreLinks() {
             </div>
             <div className="flex flex-col gap-4 sm:flex-row justify-center md:justify-start">
               <Link href="#" className="inline-block">
-                <Image
-                  src="/placeholder.svg?height=60&width=200"
-                  alt="Download on the App Store"
-                  width={200}
-                  height={60}
-                  className="h-auto w-full"
-                />
+                <div className="flex items-center bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-800 transition-colors">
+                  <Image src="/images/app-store-logo.png" alt="App Store" width={24} height={24} className="mr-3" />
+                  <div className="text-left">
+                    <div className="text-xs">Download on the</div>
+                    <div className="text-lg font-semibold">App Store</div>
+                  </div>
+                </div>
               </Link>
               <Link href="#" className="inline-block">
-                <Image
-                  src="/placeholder.svg?height=60&width=200"
-                  alt="Get it on Google Play"
-                  width={200}
-                  height={60}
-                  className="h-auto w-full"
-                />
+                <div className="flex items-center bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-800 transition-colors">
+                  <Image src="/images/google-play-logo.png" alt="Google Play" width={24} height={24} className="mr-3" />
+                  <div className="text-left">
+                    <div className="text-xs">Get it on</div>
+                    <div className="text-lg font-semibold">Google Play</div>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>

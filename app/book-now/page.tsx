@@ -71,29 +71,30 @@ export default function BookNow() {
   // Render an itinerary card
   const ItineraryCard = ({ itinerary }) => (
     <div
-      className="bg-white rounded-lg overflow-hidden shadow-md mb-4 cursor-pointer"
+      className="bg-white rounded-lg overflow-hidden shadow-md mb-4 cursor-pointer flex flex-col h-full"
       onClick={() => router.push(`/itinerary/${itinerary.id}`)}
     >
       <div className="relative h-48 w-full">
         <Image src={itinerary.image || "/placeholder.svg"} alt={itinerary.name} fill className="object-cover" />
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <h3 className="font-bold text-base">{itinerary.name}</h3>
-        <p className="text-gray-500 text-sm mt-1 line-clamp-2">{itinerary.description}</p>
+        <p className="text-gray-500 text-sm mt-1 line-clamp-2 flex-grow">{itinerary.description}</p>
         <div className="mt-2">
           <span className="text-[#FC81A0] font-bold">{itinerary.priceRange}</span>
           <span className="text-gray-500 text-sm ml-1">{itinerary.perHead ? "per head" : ""}</span>
         </div>
-        <Button
-          variant="outline"
-          className="w-full mt-3 border-[#FC81A0] text-[#FC81A0] hover:bg-[#FC81A0]/10"
-          onClick={(e) => {
-            e.stopPropagation() // Prevent triggering the parent onClick
-            router.push(`/itinerary/${itinerary.id}`)
-          }}
-        >
-          Read more
-        </Button>
+        <div className="mt-auto">
+          <Button
+            className="w-full sm:w-auto sm:max-w-[140px] mt-3 bg-[#FC81A0] hover:bg-[#e06d8a] text-white"
+            onClick={(e) => {
+              e.stopPropagation() // Prevent triggering the parent onClick
+              router.push(`/itinerary/${itinerary.id}`)
+            }}
+          >
+            Read more
+          </Button>
+        </div>
       </div>
     </div>
   )
@@ -151,13 +152,14 @@ export default function BookNow() {
                 <ItineraryCard key={itinerary.id} itinerary={itinerary} />
               ))}
             </div>
-            <Button
-              variant="outline"
-              className="w-full mt-4 border-[#FC81A0] text-[#FC81A0] hover:bg-[#FC81A0]/10"
-              onClick={() => setShowDownloadModal(true)}
-            >
-              See more itineraries
-            </Button>
+            <div className="flex justify-center mt-4">
+              <Button
+                className="sm:max-w-[200px] bg-[#FC81A0] hover:bg-[#e06d8a] text-white px-6"
+                onClick={() => setShowDownloadModal(true)}
+              >
+                See more itineraries
+              </Button>
+            </div>
           </section>
         </div>
       </main>

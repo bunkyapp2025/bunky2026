@@ -1,111 +1,96 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
-import { useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
 import Image from "next/image"
-
+import { usePathname, useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from "lucide-react"
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
 
-  // Function to handle smooth scrolling to sections
   const scrollToSection = (sectionId: string) => {
-    setIsMenuOpen(false) // Close mobile menu if open
+    setIsOpen(false)
 
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" })
+    // If not on home page, navigate to home first
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`)
+      return
+    }
+
+    // If on home page, scroll to section
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
     }
   }
 
-  // Function to handle logo click
-  const handleLogoClick = (e: React.MouseEvent) => {
-    // If we're already on the home page, prevent default link behavior
-    // and manually scroll to top
-    if (pathname === "/") {
-      e.preventDefault()
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      })
-    }
-    // Otherwise, let the Link component handle navigation
-  }
+  const navItems = [
+    { name: "Home", href: "/", sectionId: "hero" },
+    { name: "About", href: "/#about", sectionId: "about" },
+    { name: "Features", href: "/#features", sectionId: "features" },
+    { name: "Screenshots", href: "/#screenshots", sectionId: "screenshots" },
+    { name: "Testimonials", href: "/#testimonials", sectionId: "testimonials" },
+    { name: "Contact", href: "/#contact", sectionId: "contact" },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center px-4 sm:px-6">
-        <Link href="/" className="flex items-center" onClick={handleLogoClick}>
-          <Image
-            src="/images/bunky-logo.png"
-            alt="Bunky Logo"
-            width={120}
-            height={40}
-            priority
-          />
-
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <Link href="/" className="flex items-center space-x-2">
+          <Image src="/images/bunky-logo.png" alt="Bunky" width={32} height={32} className="h-8 w-8" />
+          <span className="text-xl font-bold text-[#FC81A0]">Bunky</span>
         </Link>
-        <nav className="ml-auto hidden gap-6 md:flex">
-          <button onClick={() => scrollToSection("features")} className="text-sm font-medium hover:text-[#FC81A0]">
-            About
-          </button>
-          <button onClick={() => scrollToSection("partners")} className="text-sm font-medium hover:text-[#FC81A0]">
-            Partners
-          </button>
-          <button onClick={() => scrollToSection("faq")} className="text-sm font-medium hover:text-[#FC81A0]">
-            FAQs
-          </button>
-          <button onClick={() => scrollToSection("team")} className="text-sm font-medium hover:text-[#FC81A0]">
-            Our Team
-          </button>
-          <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-[#FC81A0]">
-            Contact Us
-          </button>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.sectionId)}
+              className="text-sm font-medium text-gray-600 hover:text-[#FC81A0] transition-colors"
+            >
+              {item.name}
+            </button>
+          ))}
         </nav>
-        <div className="ml-auto md:ml-4 flex gap-2">
+
+        <div className="flex items-center space-x-4">
           <Link href="/book-now">
-            <Button className="hidden md:inline-flex bg-[#FC81A0] hover:bg-[#e06d8a]">Book Now</Button>
+            <Button className="hidden sm:inline-flex bg-[#FC81A0] hover:bg-[#e06d8a]">Book Now</Button>
           </Link>
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+
+          {/* Mobile Navigation */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <div className="flex flex-col space-y-4 mt-8">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.sectionId)}
+                    className="text-left text-lg font-medium text-gray-600 hover:text-[#FC81A0] transition-colors"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+                <Link href="/book-now" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full mt-4 bg-[#FC81A0] hover:bg-[#e06d8a]">Book Now</Button>
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-      {isMenuOpen && (
-        <div className="container md:hidden">
-          <nav className="flex flex-col gap-4 p-4">
-            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("features")}>
-              About
-            </button>
-            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("partners")}>
-              Partners
-            </button>
-            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("faq")}>
-              FAQs
-            </button>
-            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("team")}>
-              Our Team
-            </button>
-            <button className="text-sm font-medium hover:text-[#FC81A0]" onClick={() => scrollToSection("contact")}>
-              Contact Us
-            </button>
-            <div className="flex gap-2 pt-2">
-              <Link href="/book-now" className="w-full">
-                <Button size="lg" className="w-full bg-[#FC81A0] hover:bg-[#e06d8a]">
-                  Book Now
-                </Button>
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   )
 }
