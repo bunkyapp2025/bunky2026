@@ -7,9 +7,9 @@ import { Footer } from "@/components/footer"
 import { Features } from "@/components/features"
 import { AppScreenshots } from "@/components/app-screenshots"
 import { MissionVision } from "@/components/mission-vision"
-import { Partners } from "@/components/partners"
-import { Testimonials } from "@/components/testimonials"
-import { Team } from "@/components/team"
+// import { Partners } from "@/components/partners"
+// import { Testimonials } from "@/components/testimonials"
+// import { Team } from "@/components/team"
 import { FAQ } from "@/components/faq"
 import { ContactForm } from "@/components/contact-form"
 import { HostPartnerCTA } from "@/components/host-partner-cta"
@@ -80,31 +80,8 @@ export default function Home() {
                   </Button>
                 </div>
 
-                {/* Stats/Trust Indicators */}
-                <div className="mt-6 grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
-                  <div className="flex flex-col items-center sm:items-start">
-                    <div className="flex items-center">
-                      <Star className="h-4 w-4 text-[#FC81A0] mr-1" fill="#FC81A0" />
-                      <span className="font-bold text-lg">4.9/5</span>
-                    </div>
-                    <p className="text-xs text-gray-500">Customer Rating</p>
-                  </div>
-                  <div className="flex flex-col items-center sm:items-start">
-                    <div className="flex items-center">
-                      <MapPin className="h-4 w-4 text-[#FC81A0] mr-1" />
-                      <span className="font-bold text-lg">100+</span>
-                    </div>
-                    <p className="text-xs text-gray-500">Destinations</p>
-                  </div>
-                  <div className="flex flex-col items-center sm:items-start">
-                    <div className="flex items-center">
-                      <TrendingUp className="h-4 w-4 text-[#FC81A0] mr-1" />
-                      <span className="font-bold text-lg">10K+</span>
-                    </div>
-                    <p className="text-xs text-gray-500">Happy Travelers</p>
-                  </div>
-                </div>
               </div>
+
               <div className="flex items-center justify-center mt-8 md:mt-0">
                 <div className="relative">
                   {/* Main Image */}
@@ -182,10 +159,10 @@ export default function Home() {
         <MissionVision />
 
         {/* Partners */}
-        <Partners />
+      
 
         {/* Testimonials */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* Host & Partner CTA */}
         <HostPartnerCTA />
@@ -194,7 +171,7 @@ export default function Home() {
         <FAQ />
 
         {/* Team */}
-        <Team />
+        {/* <Team /> */}
 
         {/* Contact Form */}
         <ContactForm />
