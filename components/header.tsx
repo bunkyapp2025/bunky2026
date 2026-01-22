@@ -54,7 +54,14 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/images/bunky-logo.png" alt="Bunky" className="h-14 w-auto" />
+          <Image
+            src="/placeholder-logo.png"
+            alt="Bunky"
+            width={120}
+            height={56}
+            className="h-14 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
