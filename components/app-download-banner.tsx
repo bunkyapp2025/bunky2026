@@ -15,7 +15,7 @@ export function AppDownloadBanner() {
     if (typeof window !== "undefined") {
       const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
       if (/android/i.test(userAgent)) {
-        window.location.href = "https://play.google.com/store"
+        window.location.href = "https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share"
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
         window.location.href = "https://apps.apple.com"
       } else {
@@ -72,9 +72,9 @@ export function AppDownloadBanner() {
               className="absolute top-full right-4 mt-2 bg-white rounded-lg shadow-lg p-4 z-50 w-[240px]"
             >
               <div className="grid grid-cols-2 gap-4">
-                <Link href="https://play.google.com/store" target="_blank" className="flex flex-col items-center">
+                <Link href="https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share" target="_blank" className="flex flex-col items-center">
                   <Image
-                    src="/images/google-play-qr.png"
+                    src="/images/QrCode.png"
                     alt="Google Play QR Code"
                     width={100}
                     height={100}

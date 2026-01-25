@@ -80,14 +80,14 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-row gap-4 justify-center md:justify-start">
-                      <Link href="https://play.google.com/store" target="_blank">
+                      <Link href="https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
                           title="Scan or tap to download"
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/images/google-play-qr.png"
+                              src="/images/QrCode.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}
@@ -181,14 +181,14 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-row gap-4 justify-center md:justify-start">
-                      <Link href="https://play.google.com/store" target="_blank">
+                      <Link href="https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
                           title="Scan or tap to download"
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/images/google-play-qr.png"
+                              src="/images/QrCode.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}
@@ -282,14 +282,14 @@ export function AppScreenshots() {
                   {/* QR Code Download Section */}
                   <div className="mt-8 pt-6 border-t border-gray-200">
                     <div className="flex flex-row gap-4 justify-center md:justify-start">
-                      <Link href="https://play.google.com/store" target="_blank">
+                      <Link href="https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share" target="_blank">
                         <div
                           className="group relative bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow flex items-center space-x-2 max-w-[180px]"
                           title="Scan or tap to download"
                         >
                           <div className="relative h-12 w-12 flex-shrink-0">
                             <Image
-                              src="/images/google-play-qr.png"
+                              src="/images/QrCode.png"
                               alt="Google Play QR Code"
                               width={50}
                               height={50}

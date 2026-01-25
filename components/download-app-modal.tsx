@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
@@ -47,28 +48,25 @@ export function DownloadAppModal({ isOpen, onOpenChange }: DownloadAppModalProps
             </div>
 
             <div className="flex-1 text-center">
-              <div className="mb-3">
-                <Image
-                  src="/images/google-play-qr.png"
-                  alt="Google Play QR Code"
-                  width={120}
-                  height={120}
-                  className="mx-auto rounded-lg"
-                />
-              </div>
-              <div className="flex items-center justify-center space-x-2 mb-2">
-                <Image
-                  src="/images/google-play-logo.png"
-                  alt="Google Play logo"
-                  width={20}
-                  height={20}
-                  className="rounded"
-                />
-                <div className="text-sm">
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.bunky&pcampaignid=web_share"
+                target="_blank"
+                className="group"
+              >
+                <div className="relative h-28 w-28 sm:h-32 sm:w-32">
+                  <Image
+                    src="/images/QrCode.png"
+                    alt="Google Play QR Code"
+                    fill
+                    sizes="(max-width: 640px) 7rem, 8rem"
+                    className="rounded-xl border border-gray-200 bg-white p-2 shadow-sm transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <div className="text-sm mt-2">
                   <div className="text-gray-600">GET IT ON</div>
                   <div className="font-semibold">Google Play</div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
 

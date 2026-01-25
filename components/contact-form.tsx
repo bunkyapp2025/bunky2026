@@ -15,13 +15,38 @@ export function ContactForm() {
     e.preventDefault()
     setFormStatus("submitting")
 
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus("success")
-      // Reset form
-      const form = e.target as HTMLFormElement
-      form.reset()
-    }, 1500)
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+    
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setFormStatus("success")
+        form.reset()
+        setTimeout(() => setFormStatus("idle"), 3000)
+      } else {
+        setFormStatus("error")
+        setTimeout(() => setFormStatus("idle"), 3000)
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setFormStatus("error")
+      setTimeout(() => setFormStatus("idle"), 3000)
+    }
   }
 
   return (
@@ -43,7 +68,7 @@ export function ContactForm() {
               <div>
                 <h3 className="font-bold">Email Us</h3>
                 <p className="text-gray-500">Our friendly team is here to help.</p>
-                <p className="mt-1 font-medium">hello@bunky.com</p>
+                <p className="mt-1 font-medium">Support@bunky.com.ph</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -51,7 +76,7 @@ export function ContactForm() {
               <div>
                 <h3 className="font-bold">Call Us</h3>
                 <p className="text-gray-500">Mon-Fri from 8am to 5pm.</p>
-                <p className="mt-1 font-medium">+1 (555) 000-0000</p>
+                <p className="mt-1 font-medium">+63 (927) 430-1158</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -59,7 +84,9 @@ export function ContactForm() {
               <div>
                 <h3 className="font-bold">Visit Us</h3>
                 <p className="text-gray-500">Come say hello at our headquarters.</p>
-                <p className="mt-1 font-medium">123 Travel Lane, San Francisco, CA 94107</p>
+                <p className="mt-1 font-medium">1015 Parkway Corporate Center, Corporate Ave cor Parkway Place,</p>
+                <p className="mt-1 font-medium">Filinvest City, Alabang</p>
+                <p className="mt-1 font-medium">Muntinlupa City 1781</p>
               </div>
             </div>
           </div>
@@ -75,6 +102,7 @@ export function ContactForm() {
                   </label>
                   <Input
                     id="name"
+                    name="name"
                     placeholder="John Doe"
                     required
                     className="border-[#FC81A0]/20 focus-visible:ring-[#FC81A0]"
@@ -89,6 +117,7 @@ export function ContactForm() {
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="john@example.com"
                     required
@@ -105,6 +134,7 @@ export function ContactForm() {
                 </label>
                 <Input
                   id="subject"
+                  name="subject"
                   placeholder="How can we help you?"
                   required
                   className="border-[#FC81A0]/20 focus-visible:ring-[#FC81A0]"
@@ -119,6 +149,7 @@ export function ContactForm() {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder="Tell us about your inquiry..."
                   required
                   className="min-h-32 border-[#FC81A0]/20 focus-visible:ring-[#FC81A0]"
