@@ -38,16 +38,9 @@ export function ContactForm() {
       message: formData.get('message'),
     }
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing EmailJS environment variables')
-      setFormStatus("error")
-      setTimeout(() => setFormStatus("idle"), 3000)
-      return
-    }
+    const serviceId = "service_f3267rv"
+    const templateId = "template_qo2i21k"
+    const publicKey = "WTdAvtJr6FZ7dM_ku"
 
     try {
       const response = await emailjs.send(serviceId, templateId, {
